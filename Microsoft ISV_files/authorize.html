@@ -1,0 +1,1828 @@
+<!DOCTYPE html>
+
+<html lang="en-NZ"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <link rel="shortcut icon" type="image/x-icon" href="https://partner.microsoft.com/favicon.ico">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--
+To collect end-user usage analytics about your application,
+insert the following script into each page you want to track.
+Place this code immediately before the closing </head> tag,
+and before any other scripts. Your first data will appear
+automatically in just a few seconds.
+-->
+<script async="" id="db_site_optimization_module" src="./siteOptimization_f79029b2cb.min.js.nedladdning"></script><script async="" id="demandbase_js_lib" src="./2e41b136.min.js.nedladdning"></script><script async="" crossorigin="anonymous" src="./fs.js.nedladdning"></script><script type="text/javascript">
+    var appInsights = window.appInsights || function(config) {
+        function r(config) {
+            t[config] = function() {
+                var i = arguments;
+                t.queue.push(function() { t[config].apply(t, i) })
+            }
+        }
+
+        var t = { config: config }, u = document, e = window, o = "script", s = u.createElement(o), i, f;
+        for (s.src = config.url || "//az416426.vo.msecnd.net/scripts/a/ai.0.js", u.getElementsByTagName(o)[0].parentNode.appendChild(s), t.cookie = u.cookie, t.queue = [], i = ["Event", "Exception", "Metric", "PageView", "Trace"]; i.length;)r("track" + i.pop());
+        return r("setAuthenticatedUserContext"), r("clearAuthenticatedUserContext"), config.disableExceptionTracking || (i = "onerror", r("_" + i), f = e[i], e[i] = function(config, r, u, e, o) {
+            var s = f && f(config, r, u, e, o);
+            return s !== !0 && t["_" + i](config, r, u, e, o), s
+        }), t
+    }({
+        instrumentationKey: "94a6ffc9-97f0-44cd-812a-c0a5bf3fd8c0"
+    });
+
+    window.appInsights = appInsights;
+    appInsights.trackPageView();
+</script><script src="./ai.0.js.nedladdning"></script>
+
+    <link href="./styles" rel="stylesheet">
+
+    <script src="./vendorjavascript"></script>
+
+    <script src="./Notifications"></script>
+
+
+    <script src="./wcp-consent.js.nedladdning"></script>
+    <script src="./EnableManageCookiesLink"></script>
+
+
+    <script>
+        function GetTealiumCacheUrl() {
+            return '/_SetTealiumCache';
+        }
+    </script>
+    <script src="./TealiumCache"></script>
+
+
+
+
+
+
+<link href="./FluentctaStyles" rel="stylesheet">
+
+<link href="./fontRampV3styles" rel="stylesheet">
+
+<link href="./forceBodyTo1em" rel="stylesheet">
+
+<link href="./bootstrapOverridesV1" rel="stylesheet">
+
+
+<link href="./LightNav" rel="stylesheet">
+
+<script src="./universal-header-v3-location"></script>
+
+
+
+<script src="./authentication"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        function notInIframe() {
+            try {
+                return window.self === window.top;
+            } catch (e) {
+                return false;
+            }
+        }
+
+        var adalconfig = {
+            instance: 'https://login.microsoftonline.com',
+            tenant: '/common',
+            clientId: 'cb001704-4844-40d5-8450-59893bf3ee64',
+            postLogoutRedirectUri: window.location,
+            cacheLocation: 'localStorage', // enable this for IE, as sessionStorage does not work for localhost.
+            navigateToLoginRequestUrl: notInIframe(),
+            redirectUri: 'https://partner.microsoft.com/en-nz/void',
+            loadFrameTimeout: 6000
+        };
+
+        authContext = new AuthenticationContext(adalconfig);
+
+        if (authContext.isCallback(window.location.hash)) {
+            authContext.handleWindowCallback(window.location.hash);
+        }
+        else {
+            authContext._renewIdToken(function (err, idToken) {
+                if (!err) {
+                    var userAfterSilentAuth = authContext.getCachedUser();
+                    if (userAfterSilentAuth != null) {
+
+                        var goToParam = '&authFeatureId=' + encodeURI('{4B380A5F-B932-4AF7-811F-AE92C1C4F0BB}');                                                
+                        var loginUrl = "https://" + window.location.host + "/_login?authType=OpenIdConnect" + goToParam;
+
+                        $('<iframe src="' + loginUrl + '" frameborder="0" scrolling="no" id="silentAuth" style="width: 0; height: 0; border: 0; border: none; position: absolute;"></iframe>')
+                            .appendTo('body');
+
+                        $("#silentAuth").on("load", function () {
+                            $(".signin-control a span").text($(".signin-control a span").text() + " *");
+                        });
+                    }
+                }
+            });
+        }
+    });
+</script>
+
+            <meta property="og:URL" content="https://partner.microsoft.com/en-nz/void">
+        <meta property="og:image" content="https://partner.microsoft.com/-/media/mssc/mpn/partner/saas-solution-guide/saas-solution-guide.ashx">
+        <meta name="twitter:image" content="https://partner.microsoft.com/-/media/mssc/mpn/partner/saas-solution-guide/saas-solution-guide.ashx">
+        <meta property="og:locale" content="en_NZ">
+        <meta property="og:site_name" content="partner.microsoft.com">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary">
+
+            <meta name="Search.SMDSCategory" content="b8bb2d11-f0b0-49c2-9e79-d6a3469f36a5" xmlns="http://www.w3.org/1999/xhtml">
+        <meta name="Search.SMDSCategory" content="e21bdc9f-2da0-463b-aa22-7d92ce9ecba9" xmlns="http://www.w3.org/1999/xhtml">
+        <meta name="Search.SMDSCategory" content="9d7acfb3-c1d5-4ee2-ad7b-52cacf977fb0" xmlns="http://www.w3.org/1999/xhtml">
+
+        <meta name="robots" content="noindex, nofollow">
+
+    
+
+    <script>window['_fs_debug'] = false; window['_fs_host'] = 'fullstory.com'; window['_fs_script'] = 'edge.fullstory.com/s/fs.js'; window['_fs_org'] = 'VWMHY'; window['_fs_namespace'] = 'FS'; (function(m,n,e,t,l,o,g,y){ if (e in m) {if(m.console && m.console.log) { m.console.log('FullStory namespace conflict. Please set window["_fs_namespace"].');} return;} g=m[e]=function(a,b,s){g.q?g.q.push([a,b,s]):g._api(a,b,s);};g.q=[]; o=n.createElement(t);o.async=1;o.crossOrigin='anonymous';o.src='https://'+_fs_script; y=n.getElementsByTagName(t)[0];y.parentNode.insertBefore(o,y); g.identify=function(i,v,s){g(l,{uid:i},s);if(v)g(l,v,s)};g.setUserVars=function(v,s){g(l,v,s)};g.event=function(i,v,s){g('event',{n:i,p:v},s)}; g.anonymize=function(){g.identify(!!0)}; g.shutdown=function(){g("rec",!1)};g.restart=function(){g("rec",!0)}; g.log = function(a,b){g("log",[a,b])}; g.consent=function(a){g("consent",!arguments.length||a)}; g.identifyAccount=function(i,v){o='account';v=v||{};v.acctId=i;g(o,v)}; g.clearUserCookie=function(){}; g._w={};y='XMLHttpRequest';g._w[y]=m[y];y='fetch';g._w[y]=m[y]; if(m[y])m[y]=function(){return g._w[y].apply(this,arguments)}; g._v="1.2.0"; })(window,document,window['_fs_namespace'],'script','user');</script>
+
+    
+        <style>
+    #journey-create-solution-app > div > div > div.container-x.create-solution-form > div > div > div:nth-child(1) > div > div > div:nth-child(2) > div > div > label {display: block;}
+.alert-super-container {max-width: 1600px; margin: 0 auto;}
+.directory-side-image-v2 {background: none !important; }
+    </style>
+    <script type="text/javascript">
+        $(document).ready(function(){
+    var ua = window.navigator.userAgent;
+    var msie = ua.indexOf('MSIE');
+    var trident = ua.indexOf('Trident');
+    if (msie < 0 && trident < 0) {
+        $("body").on("DOMSubtreeModified",".journey-my-benefitsV2", function(){
+            if ($(".benefittiles").length == 0 && $(".in-progress-title-show").length == 0) {
+                $("#my-benefits-app").hide();
+            } else {
+                $("#my-benefits-app").show();
+            }
+        });
+    }
+});
+
+
+    </script>
+
+            <script src="./MPNCore1.js.nedladdning"></script>
+        <script src="./MPNCorePartnerBI.js.nedladdning"></script>
+        <script src="./hashtagfix.js.nedladdning"></script>
+        <script src="./361394.js.nedladdning"></script>
+        <script src="./363556b.js.nedladdning"></script>
+
+    <!--Emtpy Blade, no data source-->
+    
+<meta name="VIcurrentDateTime" content="637520993356441532">
+<script type="text/javascript" src="./VisitorIdentification.js.nedladdning"></script>
+
+<style id="ms-consent-banner-main-styles">.w8hcgFksdo30C8w-bygqu{color:#000}.ydkKdaztSS0AeHWIeIHsQ a{color:#0067B8}.erL690_8JwUW-R4bJRcfl{background-color:#EBEBEB;border:none;color:#000}.erL690_8JwUW-R4bJRcfl:enabled:hover{color:#000;background-color:#DBDBDB;box-shadow:0px 4px 10px rgba(0,0,0,0.25);border:none}.erL690_8JwUW-R4bJRcfl:enabled:focus{background-color:#DBDBDB;box-shadow:0px 4px 10px rgba(0,0,0,0.25);border:2px solid #000}.erL690_8JwUW-R4bJRcfl:disabled{opacity:1;color:rgba(0,0,0,0.2);background-color:rgba(0,0,0,0.2);border:none}._1zNQOqxpBFSokeCLGi_hGr{border:none;background-color:#0067B8;color:#fff}._1zNQOqxpBFSokeCLGi_hGr:enabled:hover{color:#fff;background-color:#0067B8;box-shadow:0px 4px 10px rgba(0,0,0,0.25);border:none}._1zNQOqxpBFSokeCLGi_hGr:enabled:focus{background-color:#0067B8;box-shadow:0px 4px 10px rgba(0,0,0,0.25);border:2px solid #000}._1zNQOqxpBFSokeCLGi_hGr:disabled{opacity:1;color:rgba(0,0,0,0.2);background-color:rgba(0,120,215,0.2);border:none}._23tra1HsiiP6cT-Cka-ycB{position:relative;display:flex;z-index:9999;width:100%;background-color:#F2F2F2;justify-content:space-between;text-align:left}div[dir="rtl"]._23tra1HsiiP6cT-Cka-ycB{text-align:right}._1Upc2NjY8AlDn177YoVj0y{margin:0;padding-left:5%;padding-top:8px;padding-bottom:8px}div[dir="rtl"] ._1Upc2NjY8AlDn177YoVj0y{margin:0;padding:8px 5% 8px 0;float:none}._23tra1HsiiP6cT-Cka-ycB svg{fill:none;max-width:none;max-height:none}._1V_hlU-7jdtPiooHMu89BB{display:table-cell;padding:12px;width:24px;height:24px;font-family:Segoe UI, SegoeUI, Arial, sans-serif;font-style:normal;font-weight:normal;font-size:24px;line-height:0}.f6QKJD7fhSbnJLarTL-W-{display:table-cell;vertical-align:middle;padding:0;font-family:Segoe UI, SegoeUI, Arial, sans-serif;font-style:normal;font-weight:normal;font-size:13px;line-height:16px}.f6QKJD7fhSbnJLarTL-W- a{text-decoration:underline}._2j0fmugLb1FgYz6KPuB91w{display:inline-block;margin-left:5%;margin-right:5%;min-width:40%;min-width:calc((150px + 3 * 4px) * 2 + 150px);min-width:-webkit-fit-content;min-width:-moz-fit-content;min-width:fit-content;align-self:center;position:relative}._1XuCi2WhiqeWRUVp3pnFG3{margin:4px;padding:5px;min-width:150px;min-height:36px;vertical-align:top;cursor:pointer;font-family:Segoe UI, SegoeUI, Arial, sans-serif;font-style:normal;font-weight:normal;font-size:15px;line-height:20px;text-align:center}._1XuCi2WhiqeWRUVp3pnFG3:focus{box-sizing:border-box}._1XuCi2WhiqeWRUVp3pnFG3:disabled{cursor:not-allowed}._2bvsb3ubApyZ0UGoQA9O9T{display:block;position:fixed;z-index:10000;top:0;left:0;width:100%;height:100%;background-color:rgba(255,255,255,0.6);overflow:auto;text-align:left}div[dir="rtl"]._2bvsb3ubApyZ0UGoQA9O9T{text-align:right}div[dir="rtl"] ._2bvsb3ubApyZ0UGoQA9O9T{left:auto;right:0}.AFsJE948muYyzCMktdzuk{position:relative;top:8%;margin-bottom:40px;margin-left:auto;margin-right:auto;box-sizing:border-box;width:640px;background-color:#fff;border:1px solid #0067B8}._3kWyBRbW_dgnMiEyx06Fu4{float:right;z-index:1;margin:2px;padding:12px;border:none;cursor:pointer;font-family:Segoe UI, SegoeUI, Arial, sans-serif;font-style:normal;font-weight:normal;font-size:13px;line-height:13px;display:flex;align-items:center;text-align:center;color:#666;background-color:#fff}div[dir="rtl"] ._3kWyBRbW_dgnMiEyx06Fu4{margin:2px;padding:12px;float:left}.uCYvKvHXrhjNgflv1VqdD{position:static;margin-top:36px;margin-left:36px;margin-right:36px}._17pX1m9O_W--iZbDt3Ta5r{margin-top:0;margin-bottom:12px;font-family:Segoe UI, SegoeUI, Arial, sans-serif;font-style:normal;font-weight:600;font-size:20px;line-height:24px;text-transform:none}._1kBkHQ1V1wu3kl-YcLgUr6{height:446px;overflow:auto}._20_nXDf6uFs9Q6wxRXG-I-{margin-top:0;font-family:Segoe UI, SegoeUI, Arial, sans-serif;font-style:normal;font-weight:normal;font-size:15px;line-height:20px}._20_nXDf6uFs9Q6wxRXG-I- a{text-decoration:underline}dl._2a0NH_GDQEQe5Ynfo7suVH{margin-top:36px;margin-bottom:0;padding:0;list-style:none;text-transform:none}dt._3j_LCPv7fyXv3A8FIXVwZ4{margin-top:20px;float:none;font-family:Segoe UI, SegoeUI, Arial, sans-serif;font-style:normal;font-weight:600;font-size:18px;line-height:24px;list-style:none}.k-vxTGFbdq1aOZB2HHpjh{margin:0;padding:0;border:none}._2Bucyy75c_ogoU1g-liB5R{margin:0;padding:0;border-bottom:none;font-family:Segoe UI, SegoeUI, Arial, sans-serif;font-style:normal;font-weight:600;font-size:18px;line-height:24px;text-transform:none}._63gwfzV8dclrsl2cfd90r{display:inline-block;margin-top:0;margin-bottom:13px;font-family:Segoe UI, SegoeUI, Arial, sans-serif;font-style:normal;font-weight:normal;font-size:15px;line-height:20px}._1l8wM_4mRYGz3Iu7l3BZR7{display:block}._2UE03QS02aZGkslegN_F-i{display:inline-block;position:relative;left:5px;margin-bottom:13px;margin-right:34px;padding:3px}div[dir="rtl"] ._2UE03QS02aZGkslegN_F-i{margin:0 0 13px 34px;padding:3px;float:none}div[dir="rtl"] ._2UE03QS02aZGkslegN_F-i{left:auto;right:5px}._23tra1HsiiP6cT-Cka-ycB *::before,._2bvsb3ubApyZ0UGoQA9O9T *::before,._23tra1HsiiP6cT-Cka-ycB *::after,._2bvsb3ubApyZ0UGoQA9O9T *::after{box-sizing:inherit}._1HSFn0HzGo6w4ADApV8-c4{outline:2px solid rgba(0,0,0,0.8)}input[type="radio"]._1dp8Vp5m3HwAqGx8qBmFV2{display:inline-block;position:relative;margin-top:0;margin-left:0;margin-right:0;height:0;width:0;border-radius:0;cursor:pointer;outline:none;box-sizing:border-box;-webkit-appearance:none;-moz-appearance:none;appearance:none}input[type="radio"]._1dp8Vp5m3HwAqGx8qBmFV2+label::before{display:block;position:absolute;top:5px;left:3px;height:19px;width:19px;content:"";border-radius:50%;border:1px solid #000;background-color:#fff}div[dir="rtl"] input[type="radio"]._1dp8Vp5m3HwAqGx8qBmFV2+label::before{left:auto;right:3px}input[type="radio"]._1dp8Vp5m3HwAqGx8qBmFV2:not(:disabled)+label:hover::before{border:1px solid #0067B8}input[type="radio"]._1dp8Vp5m3HwAqGx8qBmFV2:not(:disabled)+label:hover::after{display:block;position:absolute;top:10px;left:8px;height:9px;width:9px;content:"";border-radius:50%;background-color:rgba(0,0,0,0.8)}div[dir="rtl"] input[type="radio"]._1dp8Vp5m3HwAqGx8qBmFV2:not(:disabled)+label:hover::after{left:auto;right:8px}input[type="radio"]._1dp8Vp5m3HwAqGx8qBmFV2:not(:disabled)+label:focus::before{border:1px solid #0067B8}input[type="radio"]._1dp8Vp5m3HwAqGx8qBmFV2:not(:disabled)+label:focus::after{display:block;position:absolute;top:10px;left:8px;height:9px;width:9px;content:"";border-radius:50%;background-color:#000}div[dir="rtl"] input[type="radio"]._1dp8Vp5m3HwAqGx8qBmFV2:not(:disabled)+label:focus::after{left:auto;right:8px}input[type="radio"]._1dp8Vp5m3HwAqGx8qBmFV2:checked+label::after{display:block;position:absolute;top:10px;left:8px;height:9px;width:9px;content:"";border-radius:50%;background-color:#000}div[dir="rtl"] input[type="radio"]._1dp8Vp5m3HwAqGx8qBmFV2:checked+label::after{left:auto;right:8px}input[type="radio"]._1dp8Vp5m3HwAqGx8qBmFV2:disabled+label{cursor:not-allowed}input[type="radio"]._1dp8Vp5m3HwAqGx8qBmFV2:disabled+label::before{border:1px solid rgba(0,0,0,0.2);background-color:rgba(0,0,0,0.2)}._3RJzeL3l9Rl_lAQEm6VwdX{display:block;position:static;float:right;margin-top:0;margin-bottom:0;margin-left:19px;margin-right:0;padding-top:0;padding-bottom:0;padding-left:8px;padding-right:0;width:80%;width:calc(100% - 19px);font-family:Segoe UI, SegoeUI, Arial, sans-serif;font-style:normal;font-weight:normal;font-size:15px;line-height:20px;text-transform:none;cursor:pointer;box-sizing:border-box}div[dir="rtl"] ._3RJzeL3l9Rl_lAQEm6VwdX{margin:0 19px 0 0;padding:0 8px 0 0;float:left}.nohp3sIG12ZBhzcMnPala{margin-top:20px;margin-bottom:48px}._2uhaEsmeotZ3P-M0AXo2kF{padding:0;width:278px;height:36px;cursor:pointer;font-family:Segoe UI, SegoeUI, Arial, sans-serif;font-style:normal;font-weight:normal;font-size:15px;line-height:20px;text-align:center}._2uhaEsmeotZ3P-M0AXo2kF:focus{box-sizing:border-box}._2uhaEsmeotZ3P-M0AXo2kF:disabled{cursor:not-allowed}._3tOu1FJ59c_xz_PmI1lKV5{float:right;padding:0;width:278px;height:36px;cursor:pointer;font-family:Segoe UI, SegoeUI, Arial, sans-serif;font-style:normal;font-weight:normal;font-size:15px;line-height:20px;text-align:center}._3tOu1FJ59c_xz_PmI1lKV5:focus{box-sizing:border-box}._3tOu1FJ59c_xz_PmI1lKV5:disabled{cursor:not-allowed}div[dir="rtl"] ._3tOu1FJ59c_xz_PmI1lKV5{margin:0;padding:0;float:left}@media only screen and (max-width: 768px){._2j0fmugLb1FgYz6KPuB91w,._1Upc2NjY8AlDn177YoVj0y{padding-top:8px;padding-bottom:12px;padding-left:3.75%;padding-right:3.75%;margin:0;width:92.5%}._23tra1HsiiP6cT-Cka-ycB{display:block}._1XuCi2WhiqeWRUVp3pnFG3{margin-bottom:8px;margin-left:0;margin-right:0;width:100%}._2bvsb3ubApyZ0UGoQA9O9T{overflow:hidden}.AFsJE948muYyzCMktdzuk{top:1.8%;width:93.33%;height:96.4%;overflow:hidden}.uCYvKvHXrhjNgflv1VqdD{margin-top:24px;margin-left:24px;margin-right:24px;height:100%}._1kBkHQ1V1wu3kl-YcLgUr6{height:62%;height:calc(100% - 188px);min-height:50%}._2uhaEsmeotZ3P-M0AXo2kF{width:100%}._3tOu1FJ59c_xz_PmI1lKV5{margin-bottom:12px;margin-left:0;width:100%}div[dir="rtl"] ._3tOu1FJ59c_xz_PmI1lKV5{margin:0 0 12px 0;padding:0;float:none}}@media only screen and (max-width: 768px) and (orientation: landscape), only screen and (max-height: 260px), only screen and (max-width: 340px){.AFsJE948muYyzCMktdzuk{overflow:auto}}@media only screen and (max-height: 260px), only screen and (max-width: 340px){._1XuCi2WhiqeWRUVp3pnFG3{min-width:0}._3kWyBRbW_dgnMiEyx06Fu4{padding:3%}.uCYvKvHXrhjNgflv1VqdD{margin-top:3%;margin-left:3%;margin-right:3%}._17pX1m9O_W--iZbDt3Ta5r{margin-bottom:3%}._1kBkHQ1V1wu3kl-YcLgUr6{height:calc(79% - 64px)}.nohp3sIG12ZBhzcMnPala{margin-top:5%;margin-bottom:10%}._3tOu1FJ59c_xz_PmI1lKV5{margin-bottom:3%}div[dir="rtl"] ._3tOu1FJ59c_xz_PmI1lKV5{margin:0 0 3% 0;padding:0;float:none}}
+</style><style type="text/css" id="ms-consent-banner-theme-styles">._23tra1HsiiP6cT-Cka-ycB {
+            background-color: #F2F2F2 !important;
+        }.w8hcgFksdo30C8w-bygqu {
+            color: #000000 !important;
+        }.ydkKdaztSS0AeHWIeIHsQ a {
+            color: #0067B8 !important;
+        }._2bvsb3ubApyZ0UGoQA9O9T {
+            background-color: rgba(255, 255, 255, 0.6) !important;
+        }.AFsJE948muYyzCMktdzuk {
+            background-color: #FFFFFF !important;
+            border: 1px solid #0067B8 !important;
+        }._3kWyBRbW_dgnMiEyx06Fu4 {
+            color: #666666 !important;
+            background-color: #FFFFFF !important;
+        }._1zNQOqxpBFSokeCLGi_hGr {
+            border: none !important;
+            background-color: #0067B8 !important;
+            color: #FFFFFF !important;
+        }._1zNQOqxpBFSokeCLGi_hGr:enabled:hover {
+            color: #FFFFFF !important;
+            background-color: #0067B8 !important;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25) !important;
+            border: none !important;
+        }._1zNQOqxpBFSokeCLGi_hGr:enabled:focus {
+            background-color: #0067B8 !important;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25) !important;
+            border: 2px solid #000000 !important;
+        }._1zNQOqxpBFSokeCLGi_hGr:disabled {
+            opacity: 1 !important;
+            color: rgba(0, 0, 0, 0.2) !important;
+            background-color: rgba(0, 120, 215, 0.2) !important;
+            border: none !important;
+        }.erL690_8JwUW-R4bJRcfl {
+            border: none !important;
+            background-color: #EBEBEB !important;
+            color: #000000 !important;
+        }.erL690_8JwUW-R4bJRcfl:enabled:hover {
+            color: #000000 !important;
+            background-color: #DBDBDB !important;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25) !important;
+            border: none !important;
+        }.erL690_8JwUW-R4bJRcfl:enabled:focus {
+            background-color: #DBDBDB !important;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25) !important;
+            border: 2px solid #000000 !important;
+        }.erL690_8JwUW-R4bJRcfl:disabled {
+            opacity: 1 !important;
+            color: rgba(0, 0, 0, 0.2) !important;
+            background-color: rgba(0, 0, 0, 0.2) !important;
+            border: none !important;
+        }input[type="radio"]._1dp8Vp5m3HwAqGx8qBmFV2 + label::before {
+            border: 1px solid #000000 !important;
+            background-color: #FFFFFF !important;
+        }._1HSFn0HzGo6w4ADApV8-c4 {
+            outline: 2px solid rgba(0, 0, 0, 0.8) !important;
+        }input[type="radio"]._1dp8Vp5m3HwAqGx8qBmFV2:checked + label::after {
+            background-color: #000000 !important;
+        }input[type="radio"]._1dp8Vp5m3HwAqGx8qBmFV2 + label:hover::before {
+            border: 1px solid #0067B8 !important;
+        }input[type="radio"]._1dp8Vp5m3HwAqGx8qBmFV2 + label:hover::after {
+            background-color: rgba(0, 0, 0, 0.8) !important;
+        }input[type="radio"]._1dp8Vp5m3HwAqGx8qBmFV2 + label:focus::before {
+            border: 1px solid #0067B8 !important;
+        }input[type="radio"]._1dp8Vp5m3HwAqGx8qBmFV2 + label:focus::after {
+            background-color: #000000 !important;
+        }input[type="radio"]._1dp8Vp5m3HwAqGx8qBmFV2:disabled + label::before {
+            border: 1px solid rgba(0, 0, 0, 0.2) !important;
+            background-color: rgba(0, 0, 0, 0.2) !important;
+        }</style><link rel="stylesheet" type="text/css" href="./siteOptimization_f79029b2cb.css"></head>
+
+
+
+<body data-spy="scroll" data-target="#msScrollspy" class=" ">
+
+    <!-- Overlay Placeholder -->
+    
+    
+    
+
+    <script>
+    gmositecore._contextItemId = "b8bb2d11-f0b0-49c2-9e79-d6a3469f36a5";
+    gmositecore._isPreview = "false";
+    gmositecore._trackPageEventUrl = "/_TrackPageEvent";
+    gmositecore._trackAssetProfileUrl = "/_TrackAssetProfile";
+    gmositecore._triggerGoalUrl = "/_triggerGoal?goal=goalName";
+    gmositecore._welcomeUrl = "";
+    gmositecore._authType = "OpenIdConnect";
+    gmositecore._useAccessibleVideoPlayer = "False";
+    </script>
+    <input id="currentURLLocale" name="currentURLLocale" type="hidden" value="en-NZ">
+
+    <form id="mainform" method="post">
+        <!--[if lte IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div role="banner">
+            <!-- Header Rendering -->
+            <div id="cookie-banner"></div>
+            <div role="banner">
+    <div id="skiptocontent">
+        <a href="https://partner.microsoft.com/en-nz/void#main-content" id="skip-link" tabindex="1">Skip to Main Content</a>
+    </div>
+</div>
+
+
+
+            <!--Emtpy Blade, no data source-->
+            <!--header start-->
+
+
+<div class="navbar navbar-fixed-top universal-header-v3 panel-dropdowns" role="navigation" data-tracking-bladetype="UniversalHeaderV3" data-tracking-bladename="_Unified-Header">
+    <div class="container-v3">
+        <div class="navbar-header-wrapper">
+            <div class="navbar-header">
+                <div class="navbar-top-menu">
+                    <!-- logo -->
+                    <div class="ms-logo">
+                        
+                        <a href="https://www.microsoft.com/" aria-label="Microsoft logo" class="hidden-xs" tabindex="3">
+<img src="./Microsoft Header Logo.png" class="hidden-xs" alt="Microsoft logo" width="216" height="46" style="height:20px; width:auto;" aria-label="Microsoft logo">                        </a>
+
+                        
+                        <a href="https://www.microsoft.com/" aria-label="Microsoft logo" class="visible-xs" tabindex="3">
+<img src="./Microsoft_Header_Logo_mobile.png" class="visible-xs" alt="Microsoft logo" width="46" height="46" style="height:20px; width:auto;" aria-label="Microsoft logo">                        </a>
+                    </div>
+                    <!-- /.end logo -->
+
+                    <!-- Sign in-->
+
+        <div class="pull-right signin-control fs-exclude">
+                <div class="pull-right nav-header-login-section">
+                    <a href="https://partner.microsoft.com/_login?authType=OpenIdConnect" onclick="gmositecore.signin(&#39;OpenIdConnect&#39;); return false;" class="signin-icon" tabindex="6">
+                        <span class="">Sign in</span>
+                    </a>
+                </div>
+        </div>
+
+                    
+                    <!-- Menu-->
+                    <!-- Notification-->
+                    <!-- Search from POC using bootstrap -->
+                        <div class="dropdown categories-nav-li search-div light-nav-hidden">
+                            <a href="javascript:void(0);" class="dropdown-toggle categories-nav-a search-a search-a__no-all-ms" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" tabindex="2">
+                                <span class="icon icon-search"></span>
+                                <span class="icon icon-arrow-back mobile-search-close"></span>
+                                <span class="nav-search-text">Search</span>
+                            </a>
+                            
+    <input id="hdnResultsPath" value="https://partner.microsoft.com/en-nz/Search#/?search=" type="hidden">
+    <input id="hdnKeywordsNeededPromptText" value="Please enter one or more words." type="hidden">
+        <div class="dropdown-menu search-bar-v3">
+            <div class="search-dropdown-form">
+                <div class="search-dropdown-curated" style="display: none;">
+                        <div class="search-dropdown-recent">
+                            <a href="https://partner.microsoft.com/en-nz/void#" class="search-dropdown-clear-recent" title="Clear">Clear</a>
+                            <div class="search-dropdown-recent-label">Recent</div>
+                            <ul data-tracking-bladename="Search_recent"><li>&nbsp;</li></ul>
+                        </div>
+                                            <div class="search-dropdown-trending">
+                            <div class="search-dropdown-trending-label">Suggested</div>
+                            <ul data-tracking-bladename="Search_suggestions">
+                                            <li><a href="https://partner.microsoft.com/en-nz/solutions/my-solutions" title="Take your solution from idea to market "><img src="./Chart.png" alt="Take your solution from idea to market ">Take your solution from idea to market </a></li>
+                                            <li><a href="https://partner.microsoft.com/en-nz/solutions/azure/server-migration" title="Help your customers migrate to the cloud"><img src="./ServerMigration.png" alt="Help your customers migrate to the cloud">Help your customers migrate to the cloud</a></li>
+                                            <li><a href="https://partner.microsoft.com/en-nz/training/training-center" title="Build skills with role-specific learning paths"><img src="./Consulting.png" alt="Build skills with role-specific learning paths">Build skills with role-specific learning paths</a></li>
+                                            <li><a href="https://partner.microsoft.com/en-nz/membership/reports/myinsights" title="See Revenue and Performance reporting"><img src="./Financial.png" alt="See Revenue and Performance reporting">See Revenue and Performance reporting</a></li>
+                                            <li><a href="https://www.microsoftpartnercommunity.com/" title="Community supports partner-to-partner engagement"><img src="./Megaphone.png" alt="Community supports partner-to-partner engagement">Community supports partner-to-partner engagement</a></li>
+                            </ul>
+                        </div>
+                </div>
+                <input class="search-dropdown-input ui-autocomplete-input" placeholder="Search Partner Network" title="Search Partner Network" aria-label="Search" name="SearchTextInHeader" id="SearchTextinHeaderV3" data-enablebingsuggestions="True" data-enablelocalesensitivityforbingsuggestions="False" data-bingsuggestionapitoken="658d784d624c4763a4ab94ac23b6307c" data-bingcustomconfigurationid="2901c057-9537-46dd-911a-bbf4f75f74f8" data-enablerecentsearchlisting="True" data-numberofrecentsearchestokeep="5" data-enabletrending="True" autocomplete="off">
+                <button type="button" class="search-close"><span>Cancel</span></button>
+                <button type="button" class="search-dropdown-button" id="search-header-icon-v3"><span class="icon icon-search search-dropdown-glyph"></span></button>
+            </div>
+        </div>
+
+                        </div>
+                    <!-- /.end of the right sign in -->
+                    <!-- nav bar menu start -->
+                    <div class="collapse navbar-collapse uh-navigation" id="navbar-collapse-1">
+                        <ul class="nav navbar-nav uh_nav">
+                            
+            <li class="signin-mobile" role="menuitem">
+                <a href="https://partner.microsoft.com/_login?authType=OpenIdConnect" onclick="gmositecore.signin(&#39;OpenIdConnect&#39;); return false;" class="dropdown-toggle uh-navigation-dropdown" data-toggle="dropdown" tabindex="8">
+                    <p class="pull-left nw-nav-text">Sign in</p>
+                </a>
+
+            </li>
+                            <!-- add in site name -->
+                            <li class="current-site">
+                                    <a class="dropdown-toggle uh-navigation-dropdown icon-caret-rotate selected" href="https://partner.microsoft.com/en-nz/commercial" aria-label="Partner Network" tabindex="8">
+                                        <p class="nw-nav-text">Partner Network</p>
+                                    </a>
+                            </li>
+
+                            <!-- site name end-->
+                                        <li data-nav-item="1001" class="categories-nav-items light-nav-hidden">
+
+                                            <a href="javascript:void(0);" class="dropdown-toggle icon-caret-rotate base-menu-item uh-navigation-dropdown" role="button" aria-label="Membership" data-toggle="dropdown" aria-expanded="false" tabindex="8">
+                                                <p class="pull-left uh-p-bottom">
+                                                    <span class="nw-nav-text">Membership</span>
+                                                        <span class="icon icon-caret-down"></span>
+                                                </p>
+                                            </a>
+
+                                                <ul class="uh-dropdown-menu" style="min-height: 1px;">
+                                                            <li class="uh-dropdown-submenu">
+
+                                                                <a href="javascript:void(0);" class="dropdown-toggle icon-caret-rotate uh-navigation-dropdown-submenu" role="button" data-toggle="true" aria-label="How It Works" aria-expanded="false">
+                                                                    <p class="submenu-dropdown-text"> How It Works</p>
+                                                                        <span class="icon icon-caret-down"></span>
+
+                                                                </a>
+                                                                    <ul class="uh-dropdown-menu uh-child-submenu" style="min-height: 1px;">
+                                                                                <li>
+                                                                                    <a href="https://partner.microsoft.com/en-nz/membership" class="uh-secondary" aria-label="Get Started Here">
+                                                                                        <p class="submenu-dropdown-text">Get Started Here</p>
+                                                                                    </a>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <a href="https://partner.microsoft.com/en-nz/membership/compare-offers" class="uh-secondary" aria-label="Compare Programs">
+                                                                                        <p class="submenu-dropdown-text">Compare Programs</p>
+                                                                                    </a>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <a href="https://partner.microsoft.com/en-nz/membership/competencies" class="uh-secondary" aria-label="Competencies">
+                                                                                        <p class="submenu-dropdown-text">Competencies</p>
+                                                                                    </a>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <a href="https://partner.microsoft.com/en-nz/membership/renew" class="uh-secondary" aria-label="Renew">
+                                                                                        <p class="submenu-dropdown-text">Renew</p>
+                                                                                    </a>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <a href="https://partner.microsoft.com/dashboard/account/v3/enrollment/introduction/partnership" class="uh-secondary" aria-label="Enroll">
+                                                                                        <p class="submenu-dropdown-text">Enroll</p>
+                                                                                    </a>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <a href="https://partner.microsoft.com/en-nz/membership/why-microsoft" class="uh-secondary" aria-label="Why Microsoft">
+                                                                                        <p class="submenu-dropdown-text">Why Microsoft</p>
+                                                                                    </a>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <a href="https://partner.microsoft.com/en-nz/membership/action-pack" class="uh-secondary" aria-label="Action Pack">
+                                                                                        <p class="submenu-dropdown-text">Action Pack</p>
+                                                                                    </a>
+                                                                                </li>
+                                                                    </ul>
+                                                            </li>
+                                                            <li class="uh-dropdown-submenu">
+
+                                                                <a href="javascript:void(0);" class="dropdown-toggle icon-caret-rotate uh-navigation-dropdown-submenu" role="button" data-toggle="true" aria-label="Programs" aria-expanded="false">
+                                                                    <p class="submenu-dropdown-text"> Programs</p>
+                                                                        <span class="icon icon-caret-down"></span>
+
+                                                                </a>
+                                                                    <ul class="uh-dropdown-menu uh-child-submenu" style="min-height: 1px;">
+                                                                                <li>
+                                                                                    <a href="https://partner.microsoft.com/en-nz/membership/cloud-solution-provider" class="uh-secondary" aria-label="Cloud Solution Provider">
+                                                                                        <p class="submenu-dropdown-text">Cloud Solution Provider</p>
+                                                                                    </a>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <a href="https://partner.microsoft.com/en-nz/membership/co-sell-with-microsoft" class="uh-secondary" aria-label="Co-sell with Microsoft">
+                                                                                        <p class="submenu-dropdown-text">Co-sell with Microsoft</p>
+                                                                                    </a>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <a href="https://partner.microsoft.com/en-nz/licensing" class="uh-secondary" aria-label="Licensing">
+                                                                                        <p class="submenu-dropdown-text">Licensing</p>
+                                                                                    </a>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <a href="https://partner.microsoft.com/en-nz/solutions/go-to-market" class="uh-secondary" aria-label="Go to Market">
+                                                                                        <p class="submenu-dropdown-text">Go to Market</p>
+                                                                                    </a>
+                                                                                </li>
+                                                                    </ul>
+                                                            </li>
+                                                            <li class="uh-dropdown-submenu">
+
+                                                                <a href="javascript:void(0);" class="dropdown-toggle icon-caret-rotate uh-navigation-dropdown-submenu" role="button" data-toggle="true" aria-label="Tools" aria-expanded="false">
+                                                                    <p class="submenu-dropdown-text"> Tools</p>
+                                                                        <span class="icon icon-caret-down"></span>
+
+                                                                </a>
+                                                                    <ul class="uh-dropdown-menu uh-child-submenu" style="min-height: 1px;">
+                                                                                <li>
+                                                                                    <a href="https://partner.microsoft.com/en-nz/membership/reports/myinsights" class="uh-secondary" aria-label="Insights Dashboard">
+                                                                                        <p class="submenu-dropdown-text">Insights Dashboard</p>
+                                                                                    </a>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <a href="https://partner.microsoft.com/en-nz/membership/partner-roadmap" class="uh-secondary" aria-label="Partner Roadmap">
+                                                                                        <p class="submenu-dropdown-text">Partner Roadmap</p>
+                                                                                    </a>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <a href="https://partner.microsoft.com/en-nz/solutions/my-solutions" class="uh-secondary" aria-label="Solution Workspace">
+                                                                                        <p class="submenu-dropdown-text">Solution Workspace</p>
+                                                                                    </a>
+                                                                                </li>
+                                                                    </ul>
+                                                            </li>
+
+                                                </ul>
+
+                                        </li>
+                                        <li data-nav-item="1002" class="categories-nav-items light-nav-hidden">
+
+                                            <a href="javascript:void(0);" class="dropdown-toggle icon-caret-rotate base-menu-item uh-navigation-dropdown" role="button" aria-label="Solutions" data-toggle="dropdown" aria-expanded="false" tabindex="8">
+                                                <p class="pull-left uh-p-bottom">
+                                                    <span class="nw-nav-text">Solutions</span>
+                                                        <span class="icon icon-caret-down"></span>
+                                                </p>
+                                            </a>
+
+                                                <ul class="uh-dropdown-menu" style="min-height: 1px;">
+                                                            <li class="uh-dropdown-submenu">
+
+                                                                <a href="javascript:void(0);" class="dropdown-toggle icon-caret-rotate uh-navigation-dropdown-submenu" role="button" data-toggle="true" aria-label="Solution Areas" aria-expanded="false">
+                                                                    <p class="submenu-dropdown-text"> Solution Areas</p>
+                                                                        <span class="icon icon-caret-down"></span>
+
+                                                                </a>
+                                                                    <ul class="uh-dropdown-menu uh-child-submenu" style="min-height: 1px;">
+                                                                                <li>
+                                                                                    <a href="https://partner.microsoft.com/en-nz/solutions/modern-workplace" class="uh-secondary" aria-label="Modern Workplace">
+                                                                                        <p class="submenu-dropdown-text">Modern Workplace</p>
+                                                                                    </a>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <a href="https://partner.microsoft.com/en-nz/solutions/business-applications" class="uh-secondary" aria-label="Business Applications">
+                                                                                        <p class="submenu-dropdown-text">Business Applications</p>
+                                                                                    </a>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <a href="https://partner.microsoft.com/en-nz/solutions/azure" class="uh-secondary" aria-label="Azure">
+                                                                                        <p class="submenu-dropdown-text">Azure</p>
+                                                                                    </a>
+                                                                                </li>
+                                                                    </ul>
+                                                            </li>
+                                                            <li class="uh-dropdown-submenu">
+
+                                                                <a href="javascript:void(0);" class="dropdown-toggle icon-caret-rotate uh-navigation-dropdown-submenu" role="button" data-toggle="true" aria-label="Business Opportunities" aria-expanded="false">
+                                                                    <p class="submenu-dropdown-text"> Business Opportunities</p>
+                                                                        <span class="icon icon-caret-down"></span>
+
+                                                                </a>
+                                                                    <ul class="uh-dropdown-menu uh-child-submenu" style="min-height: 1px;">
+                                                                                <li>
+                                                                                    <a href="https://partner.microsoft.com/en-nz/solutions/nonprofit" class="uh-secondary" aria-label="Nonprofit">
+                                                                                        <p class="submenu-dropdown-text">Nonprofit</p>
+                                                                                    </a>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <a href="https://partner.microsoft.com/en-nz/saas-solution-guide" class="uh-secondary" aria-label="Cloud Applications">
+                                                                                        <p class="submenu-dropdown-text">Cloud Applications</p>
+                                                                                    </a>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <a href="https://partner.microsoft.com/en-nz/solutions/managed-services" class="uh-secondary" aria-label="Managed Services">
+                                                                                        <p class="submenu-dropdown-text">Managed Services</p>
+                                                                                    </a>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <a href="https://partner.microsoft.com/en-nz/solutions/build-a-practice" class="uh-secondary" aria-label="Build a Practice">
+                                                                                        <p class="submenu-dropdown-text">Build a Practice</p>
+                                                                                    </a>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <a href="https://partner.microsoft.com/en-nz/solutions/my-solutions" class="uh-secondary" aria-label="Build a Solution">
+                                                                                        <p class="submenu-dropdown-text">Build a Solution</p>
+                                                                                    </a>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <a href="https://partner.microsoft.com/en-nz/solutions/the-commercial-marketplace" class="uh-secondary" aria-label="Publish a Solution">
+                                                                                        <p class="submenu-dropdown-text">Publish a Solution</p>
+                                                                                    </a>
+                                                                                </li>
+                                                                    </ul>
+                                                            </li>
+                                                            <li class="uh-dropdown-submenu">
+
+                                                                <a href="javascript:void(0);" class="dropdown-toggle icon-caret-rotate uh-navigation-dropdown-submenu" role="button" data-toggle="true" aria-label="Partner Marketing" aria-expanded="false">
+                                                                    <p class="submenu-dropdown-text"> Partner Marketing</p>
+                                                                        <span class="icon icon-caret-down"></span>
+
+                                                                </a>
+                                                                    <ul class="uh-dropdown-menu uh-child-submenu" style="min-height: 1px;">
+                                                                                <li>
+                                                                                    <a href="https://partner.microsoft.com/en-nz/solutions/marketing-resource-hub" class="uh-secondary" aria-label="Marketing Resources">
+                                                                                        <p class="submenu-dropdown-text">Marketing Resources</p>
+                                                                                    </a>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <a href="https://partner.microsoft.com/en-nz/solutions/reach-more-customers" class="uh-secondary" aria-label="Find Customers">
+                                                                                        <p class="submenu-dropdown-text">Find Customers</p>
+                                                                                    </a>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <a href="https://partner.microsoft.com/en-nz/solutions/global-growth-center" class="uh-secondary" aria-label="Market Expansion">
+                                                                                        <p class="submenu-dropdown-text">Market Expansion</p>
+                                                                                    </a>
+                                                                                </li>
+                                                                    </ul>
+                                                            </li>
+
+                                                </ul>
+
+                                        </li>
+                                        <li data-nav-item="1003" class="categories-nav-items light-nav-hidden">
+
+                                            <a href="javascript:void(0);" class="dropdown-toggle icon-caret-rotate base-menu-item uh-navigation-dropdown" role="button" aria-label="Training" data-toggle="dropdown" aria-expanded="false" tabindex="8">
+                                                <p class="pull-left uh-p-bottom">
+                                                    <span class="nw-nav-text">Training</span>
+                                                        <span class="icon icon-caret-down"></span>
+                                                </p>
+                                            </a>
+
+                                                <ul class="uh-dropdown-menu" style="min-height: 1px;">
+                                                            <li class="uh-dropdown-submenu">
+
+                                                                <a href="javascript:void(0);" class="dropdown-toggle icon-caret-rotate uh-navigation-dropdown-submenu" role="button" data-toggle="true" aria-label="Learning Paths" aria-expanded="false">
+                                                                    <p class="submenu-dropdown-text"> Learning Paths</p>
+                                                                        <span class="icon icon-caret-down"></span>
+
+                                                                </a>
+                                                                    <ul class="uh-dropdown-menu uh-child-submenu" style="min-height: 1px;">
+                                                                                <li>
+                                                                                    <a href="https://partner.microsoft.com/en-nz/training/training-center" class="uh-secondary" aria-label="Overview">
+                                                                                        <p class="submenu-dropdown-text">Overview</p>
+                                                                                    </a>
+                                                                                </li>
+                                                                    </ul>
+                                                            </li>
+                                                            <li class="uh-dropdown-submenu">
+
+                                                                <a href="javascript:void(0);" class="dropdown-toggle icon-caret-rotate uh-navigation-dropdown-submenu" role="button" data-toggle="true" aria-label="All Training" aria-expanded="false">
+                                                                    <p class="submenu-dropdown-text"> All Training</p>
+                                                                        <span class="icon icon-caret-down"></span>
+
+                                                                </a>
+                                                                    <ul class="uh-dropdown-menu uh-child-submenu" style="min-height: 1px;">
+                                                                                <li>
+                                                                                    <a href="https://partner.microsoft.com/en-nz/training" class="uh-secondary" aria-label="Training Options">
+                                                                                        <p class="submenu-dropdown-text">Training Options</p>
+                                                                                    </a>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <a href="https://partner.microsoft.com/en-nz/training/required-training" class="uh-secondary" aria-label="Required Training">
+                                                                                        <p class="submenu-dropdown-text">Required Training</p>
+                                                                                    </a>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <a href="https://partner.microsoft.com/en-nz/training/training-manager" class="uh-secondary" aria-label="Training Manager">
+                                                                                        <p class="submenu-dropdown-text">Training Manager</p>
+                                                                                    </a>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <a href="https://partner.microsoft.com/en-nz/training/assets" class="uh-secondary" aria-label="Search All Training">
+                                                                                        <p class="submenu-dropdown-text">Search All Training</p>
+                                                                                    </a>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <a href="https://partner.microsoft.com/en-nz/training/virtual-training-series" class="uh-secondary" aria-label="Virtual Trainings">
+                                                                                        <p class="submenu-dropdown-text">Virtual Trainings</p>
+                                                                                    </a>
+                                                                                </li>
+                                                                    </ul>
+                                                            </li>
+                                                            <li class="uh-dropdown-submenu">
+
+                                                                <a href="javascript:void(0);" class="dropdown-toggle icon-caret-rotate uh-navigation-dropdown-submenu" role="button" data-toggle="true" aria-label="Growth Resources" aria-expanded="false">
+                                                                    <p class="submenu-dropdown-text"> Growth Resources</p>
+                                                                        <span class="icon icon-caret-down"></span>
+
+                                                                </a>
+                                                                    <ul class="uh-dropdown-menu uh-child-submenu" style="min-height: 1px;">
+                                                                                <li>
+                                                                                    <a href="https://partner.microsoft.com/en-nz/training/enablement-overview" class="uh-secondary" aria-label="Overview">
+                                                                                        <p class="submenu-dropdown-text">Overview</p>
+                                                                                    </a>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <a href="http://profitabilitybenchmark.microsoft.com/" class="uh-secondary" aria-label="Assess Your Capability">
+                                                                                        <p class="submenu-dropdown-text">Assess Your Capability</p>
+                                                                                    </a>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <a href="https://partner.microsoft.com/en-nz/solutions/build-a-practice" class="uh-secondary" aria-label="Build a More Profitable Business">
+                                                                                        <p class="submenu-dropdown-text">Build a More Profitable Business</p>
+                                                                                    </a>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <a href="https://partner.microsoft.com/en-nz/campaigns/cloud-practice-playbooks" class="uh-secondary" aria-label="Cloud Practice Playbooks">
+                                                                                        <p class="submenu-dropdown-text">Cloud Practice Playbooks</p>
+                                                                                    </a>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <a href="https://partner.microsoft.com/en-nz/training/technical-presales-deployment-services" class="uh-secondary" aria-label="Technical Presales and Deployment">
+                                                                                        <p class="submenu-dropdown-text">Technical Presales and Deployment</p>
+                                                                                    </a>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <a href="https://partner.microsoft.com/en-nz/resources" class="uh-secondary" aria-label="Operations Readiness">
+                                                                                        <p class="submenu-dropdown-text">Operations Readiness</p>
+                                                                                    </a>
+                                                                                </li>
+                                                                    </ul>
+                                                            </li>
+
+                                                </ul>
+
+                                        </li>
+                                        <li data-nav-item="1004" class="categories-nav-items light-nav-hidden">
+
+                                            <a href="javascript:void(0);" class="dropdown-toggle icon-caret-rotate base-menu-item uh-navigation-dropdown" role="button" aria-label="Connect" data-toggle="dropdown" aria-expanded="false" tabindex="8">
+                                                <p class="pull-left uh-p-bottom">
+                                                    <span class="nw-nav-text">Connect</span>
+                                                        <span class="icon icon-caret-down"></span>
+                                                </p>
+                                            </a>
+
+                                                <ul class="uh-dropdown-menu" style="min-height: 1px;">
+                                                            <li class="uh-dropdown-submenu">
+
+                                                                <a href="javascript:void(0);" class="dropdown-toggle icon-caret-rotate uh-navigation-dropdown-submenu" role="button" data-toggle="true" aria-label="Partner Community" aria-expanded="false">
+                                                                    <p class="submenu-dropdown-text"> Partner Community</p>
+                                                                        <span class="icon icon-caret-down"></span>
+
+                                                                </a>
+                                                                    <ul class="uh-dropdown-menu uh-child-submenu" style="min-height: 1px;">
+                                                                                <li>
+                                                                                    <a href="https://partner.microsoft.com/en-nz/connect/build-partnerships" class="uh-secondary" aria-label="Build Partnerships">
+                                                                                        <p class="submenu-dropdown-text">Build Partnerships</p>
+                                                                                    </a>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <a href="https://partner.microsoft.com/en-nz/connect/follow-microsoft" class="uh-secondary" aria-label="Follow Microsoft">
+                                                                                        <p class="submenu-dropdown-text">Follow Microsoft</p>
+                                                                                    </a>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <a href="https://blogs.partner.microsoft.com/en-nz/mpn" class="uh-secondary" aria-label="Microsoft Partner Blog">
+                                                                                        <p class="submenu-dropdown-text">Microsoft Partner Blog</p>
+                                                                                    </a>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <a href="https://partner.microsoft.com/en-nz/connect/case-studies" class="uh-secondary" aria-label="Case Studies">
+                                                                                        <p class="submenu-dropdown-text">Case Studies</p>
+                                                                                    </a>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <a href="https://www.microsoftpartnercommunity.com/" class="uh-secondary" aria-label="Microsoft Partner Community">
+                                                                                        <p class="submenu-dropdown-text">Microsoft Partner Community</p>
+                                                                                    </a>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <a href="https://partner.microsoft.com/en-nz/connect/inclusion" class="uh-secondary" aria-label="Inclusive Economy">
+                                                                                        <p class="submenu-dropdown-text">Inclusive Economy</p>
+                                                                                    </a>
+                                                                                </li>
+                                                                    </ul>
+                                                            </li>
+                                                            <li class="uh-dropdown-submenu">
+
+                                                                <a href="javascript:void(0);" class="dropdown-toggle icon-caret-rotate uh-navigation-dropdown-submenu" role="button" data-toggle="true" aria-label="Events" aria-expanded="false">
+                                                                    <p class="submenu-dropdown-text"> Events</p>
+                                                                        <span class="icon icon-caret-down"></span>
+
+                                                                </a>
+                                                                    <ul class="uh-dropdown-menu uh-child-submenu" style="min-height: 1px;">
+                                                                                <li>
+                                                                                    <a href="https://partner.microsoft.com/en-nz/event-search" class="uh-secondary" aria-label="Find Partner Events">
+                                                                                        <p class="submenu-dropdown-text">Find Partner Events</p>
+                                                                                    </a>
+                                                                                </li>
+                                                                    </ul>
+                                                            </li>
+
+                                                </ul>
+
+                                        </li>
+                                        <li data-nav-item="1005" class="categories-nav-items light-nav-hidden">
+
+                                            <a href="javascript:void(0);" class="dropdown-toggle icon-caret-rotate base-menu-item uh-navigation-dropdown" role="button" aria-label="Inspire" data-toggle="dropdown" aria-expanded="false" tabindex="8">
+                                                <p class="pull-left uh-p-bottom">
+                                                    <span class="nw-nav-text">Inspire</span>
+                                                        <span class="icon icon-caret-down"></span>
+                                                </p>
+                                            </a>
+
+                                                <ul class="uh-dropdown-menu" style="min-height: 1px;">
+                                                            <li class="uh-dropdown-submenu">
+
+                                                                <a href="javascript:void(0);" class="dropdown-toggle icon-caret-rotate uh-navigation-dropdown-submenu" role="button" data-toggle="true" aria-label="Microsoft Inspire" aria-expanded="false">
+                                                                    <p class="submenu-dropdown-text"> Microsoft Inspire</p>
+                                                                        <span class="icon icon-caret-down"></span>
+
+                                                                </a>
+                                                                    <ul class="uh-dropdown-menu uh-child-submenu" style="min-height: 1px;">
+                                                                                <li>
+                                                                                    <a href="https://partner.microsoft.com/en-nz/inspire" class="uh-secondary" aria-label="Overview">
+                                                                                        <p class="submenu-dropdown-text">Overview</p>
+                                                                                    </a>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <a href="https://partner.microsoft.com/en-nz/inspire/awards" class="uh-secondary" aria-label="Awards">
+                                                                                        <p class="submenu-dropdown-text">Awards</p>
+                                                                                    </a>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <a href="https://partner.microsoft.com/en-nz/inspire/faq" class="uh-secondary" aria-label="FAQ">
+                                                                                        <p class="submenu-dropdown-text">FAQ</p>
+                                                                                    </a>
+                                                                                </li>
+                                                                    </ul>
+                                                            </li>
+                                                            <li class="uh-dropdown-submenu">
+
+                                                                <a href="javascript:void(0);" class="dropdown-toggle icon-caret-rotate uh-navigation-dropdown-submenu" role="button" data-toggle="true" aria-label="MyInspire" aria-expanded="false">
+                                                                    <p class="submenu-dropdown-text"> MyInspire</p>
+                                                                        <span class="icon icon-caret-down"></span>
+
+                                                                </a>
+                                                                    <ul class="uh-dropdown-menu uh-child-submenu" style="min-height: 1px;">
+                                                                                <li>
+                                                                                    <a href="http://myinspire.microsoft.com/auth-redirect?dest=/home" class="uh-secondary" aria-label="Attendee sign in">
+                                                                                        <p class="submenu-dropdown-text">Attendee sign in</p>
+                                                                                    </a>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <a href="https://myinspire.microsoft.com/sessions" class="uh-secondary" aria-label="Session catalog">
+                                                                                        <p class="submenu-dropdown-text">Session catalog</p>
+                                                                                    </a>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <a href="https://myinspire.microsoft.com/speakers" class="uh-secondary" aria-label="Speaker directory">
+                                                                                        <p class="submenu-dropdown-text">Speaker directory</p>
+                                                                                    </a>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <a href="https://myinspire.microsoft.com/sponsors" class="uh-secondary" aria-label="Featured partners">
+                                                                                        <p class="submenu-dropdown-text">Featured partners</p>
+                                                                                    </a>
+                                                                                </li>
+                                                                    </ul>
+                                                            </li>
+
+                                                </ul>
+
+                                        </li>
+                                        <li data-nav-item="1006" class="categories-nav-items light-nav-hidden">
+
+                                            <a href="https://partner.microsoft.com/en-nz/support" class=" base-menu-item uh-navigation-dropdown" role="button" aria-label="Support" tabindex="8">
+                                                <p class="pull-left uh-p-bottom">
+                                                    <span class="nw-nav-text">Support</span>
+                                                </p>
+                                            </a>
+
+                                                <ul class="uh-dropdown-menu" style="min-height: 1px;">
+                                                </ul>
+
+                                        </li>
+
+
+                             <li class="more-btn hidden categories-nav-items light-nav-hidden">
+                                <a href="javascript:void(0);" class="dropdown-toggle base-menu-item uh-navigation-dropdown icon-caret-rotate" data-toggle="dropdown" tabindex="8">
+                                    <p class="uh-p-bottom">
+                                        <span class="nw-nav-text">More</span>
+                                        <span class="icon icon-caret-down"></span>
+                                    </p>
+                                </a>
+                                <ul class="uh-dropdown-menu" style="min-height: 1px;">
+
+                                            <li data-nav-item="1001" class="uh-dropdown-submenu">
+                                                <a href="javascript:void(0);" class="dropdown-toggle icon-caret-rotate uh-navigation-dropdown-submenu" data-toggle="dropdown">
+                                                    <p class="submenu-dropdown-text"> Membership</p>
+
+                                                        <span class="icon icon-caret-down"></span>
+                                                </a>
+                                                    <ul class="uh-dropdown-menu uh-child-submenu" style="min-height: 1px;">
+                                                                <li class="uh-child-tertiary">
+
+
+                                                                    <a href="javascript:void(0);" class="dropdown-toggle icon-caret-rotate uh-navigation-dropdown-submenu-tertiary" data-toggle="dropdown" role="button" aria-label="How It Works" aria-expanded="false">
+                                                                        <p class="submenu-dropdown-text">How It Works</p>
+                                                                            <span class="icon icon-caret-down"></span>
+                                                                    </a>
+                                                                        <ul class="uh-dropdown-menu uh-child-submenu uh-tertiary-child-menu" style="min-height: 1px;">
+                                                                                    <li>
+
+
+                                                                                        <a href="https://partner.microsoft.com/en-nz/membership" aria-label="Get Started Here">
+                                                                                            <p class="submenu-dropdown-text">Get Started Here</p>              
+                                                                                        </a>
+                                                                                    </li>
+                                                                                    <li>
+
+
+                                                                                        <a href="https://partner.microsoft.com/en-nz/membership/compare-offers" aria-label="Compare Programs">
+                                                                                            <p class="submenu-dropdown-text">Compare Programs</p>              
+                                                                                        </a>
+                                                                                    </li>
+                                                                                    <li>
+
+
+                                                                                        <a href="https://partner.microsoft.com/en-nz/membership/competencies" aria-label="Competencies">
+                                                                                            <p class="submenu-dropdown-text">Competencies</p>              
+                                                                                        </a>
+                                                                                    </li>
+                                                                                    <li>
+
+
+                                                                                        <a href="https://partner.microsoft.com/en-nz/membership/renew" aria-label="Renew">
+                                                                                            <p class="submenu-dropdown-text">Renew</p>              
+                                                                                        </a>
+                                                                                    </li>
+                                                                                    <li>
+
+
+                                                                                        <a href="https://partner.microsoft.com/dashboard/account/v3/enrollment/introduction/partnership" aria-label="Enroll">
+                                                                                            <p class="submenu-dropdown-text">Enroll</p>              
+                                                                                        </a>
+                                                                                    </li>
+                                                                                    <li>
+
+
+                                                                                        <a href="https://partner.microsoft.com/en-nz/membership/why-microsoft" aria-label="Why Microsoft">
+                                                                                            <p class="submenu-dropdown-text">Why Microsoft</p>              
+                                                                                        </a>
+                                                                                    </li>
+                                                                                    <li>
+
+
+                                                                                        <a href="https://partner.microsoft.com/en-nz/membership/action-pack" aria-label="Action Pack">
+                                                                                            <p class="submenu-dropdown-text">Action Pack</p>              
+                                                                                        </a>
+                                                                                    </li>
+                                                                        </ul>
+                                                                </li>
+                                                                <li class="uh-child-tertiary">
+
+
+                                                                    <a href="javascript:void(0);" class="dropdown-toggle icon-caret-rotate uh-navigation-dropdown-submenu-tertiary" data-toggle="dropdown" role="button" aria-label="Programs" aria-expanded="false">
+                                                                        <p class="submenu-dropdown-text">Programs</p>
+                                                                            <span class="icon icon-caret-down"></span>
+                                                                    </a>
+                                                                        <ul class="uh-dropdown-menu uh-child-submenu uh-tertiary-child-menu" style="min-height: 1px;">
+                                                                                    <li>
+
+
+                                                                                        <a href="https://partner.microsoft.com/en-nz/membership/cloud-solution-provider" aria-label="Cloud Solution Provider">
+                                                                                            <p class="submenu-dropdown-text">Cloud Solution Provider</p>              
+                                                                                        </a>
+                                                                                    </li>
+                                                                                    <li>
+
+
+                                                                                        <a href="https://partner.microsoft.com/en-nz/membership/co-sell-with-microsoft" aria-label="Co-sell with Microsoft">
+                                                                                            <p class="submenu-dropdown-text">Co-sell with Microsoft</p>              
+                                                                                        </a>
+                                                                                    </li>
+                                                                                    <li>
+
+
+                                                                                        <a href="https://partner.microsoft.com/en-nz/licensing" aria-label="Licensing">
+                                                                                            <p class="submenu-dropdown-text">Licensing</p>              
+                                                                                        </a>
+                                                                                    </li>
+                                                                                    <li>
+
+
+                                                                                        <a href="https://partner.microsoft.com/en-nz/solutions/go-to-market" aria-label="Go to Market">
+                                                                                            <p class="submenu-dropdown-text">Go to Market</p>              
+                                                                                        </a>
+                                                                                    </li>
+                                                                        </ul>
+                                                                </li>
+                                                                <li class="uh-child-tertiary">
+
+
+                                                                    <a href="javascript:void(0);" class="dropdown-toggle icon-caret-rotate uh-navigation-dropdown-submenu-tertiary" data-toggle="dropdown" role="button" aria-label="Tools" aria-expanded="false">
+                                                                        <p class="submenu-dropdown-text">Tools</p>
+                                                                            <span class="icon icon-caret-down"></span>
+                                                                    </a>
+                                                                        <ul class="uh-dropdown-menu uh-child-submenu uh-tertiary-child-menu" style="min-height: 1px;">
+                                                                                    <li>
+
+
+                                                                                        <a href="https://partner.microsoft.com/en-nz/membership/reports/myinsights" aria-label="Insights Dashboard">
+                                                                                            <p class="submenu-dropdown-text">Insights Dashboard</p>              
+                                                                                        </a>
+                                                                                    </li>
+                                                                                    <li>
+
+
+                                                                                        <a href="https://partner.microsoft.com/en-nz/membership/partner-roadmap" aria-label="Partner Roadmap">
+                                                                                            <p class="submenu-dropdown-text">Partner Roadmap</p>              
+                                                                                        </a>
+                                                                                    </li>
+                                                                                    <li>
+
+
+                                                                                        <a href="https://partner.microsoft.com/en-nz/solutions/my-solutions" aria-label="Solution Workspace">
+                                                                                            <p class="submenu-dropdown-text">Solution Workspace</p>              
+                                                                                        </a>
+                                                                                    </li>
+                                                                        </ul>
+                                                                </li>
+                                                    </ul>
+                                            </li>
+                                            <li data-nav-item="1002" class="uh-dropdown-submenu">
+                                                <a href="javascript:void(0);" class="dropdown-toggle icon-caret-rotate uh-navigation-dropdown-submenu" data-toggle="dropdown">
+                                                    <p class="submenu-dropdown-text"> Solutions</p>
+
+                                                        <span class="icon icon-caret-down"></span>
+                                                </a>
+                                                    <ul class="uh-dropdown-menu uh-child-submenu" style="min-height: 1px;">
+                                                                <li class="uh-child-tertiary">
+
+
+                                                                    <a href="javascript:void(0);" class="dropdown-toggle icon-caret-rotate uh-navigation-dropdown-submenu-tertiary" data-toggle="dropdown" role="button" aria-label="Solution Areas" aria-expanded="false">
+                                                                        <p class="submenu-dropdown-text">Solution Areas</p>
+                                                                            <span class="icon icon-caret-down"></span>
+                                                                    </a>
+                                                                        <ul class="uh-dropdown-menu uh-child-submenu uh-tertiary-child-menu" style="min-height: 1px;">
+                                                                                    <li>
+
+
+                                                                                        <a href="https://partner.microsoft.com/en-nz/solutions/modern-workplace" aria-label="Modern Workplace">
+                                                                                            <p class="submenu-dropdown-text">Modern Workplace</p>              
+                                                                                        </a>
+                                                                                    </li>
+                                                                                    <li>
+
+
+                                                                                        <a href="https://partner.microsoft.com/en-nz/solutions/business-applications" aria-label="Business Applications">
+                                                                                            <p class="submenu-dropdown-text">Business Applications</p>              
+                                                                                        </a>
+                                                                                    </li>
+                                                                                    <li>
+
+
+                                                                                        <a href="https://partner.microsoft.com/en-nz/solutions/azure" aria-label="Azure">
+                                                                                            <p class="submenu-dropdown-text">Azure</p>              
+                                                                                        </a>
+                                                                                    </li>
+                                                                        </ul>
+                                                                </li>
+                                                                <li class="uh-child-tertiary">
+
+
+                                                                    <a href="javascript:void(0);" class="dropdown-toggle icon-caret-rotate uh-navigation-dropdown-submenu-tertiary" data-toggle="dropdown" role="button" aria-label="Business Opportunities" aria-expanded="false">
+                                                                        <p class="submenu-dropdown-text">Business Opportunities</p>
+                                                                            <span class="icon icon-caret-down"></span>
+                                                                    </a>
+                                                                        <ul class="uh-dropdown-menu uh-child-submenu uh-tertiary-child-menu" style="min-height: 1px;">
+                                                                                    <li>
+
+
+                                                                                        <a href="https://partner.microsoft.com/en-nz/solutions/nonprofit" aria-label="Nonprofit">
+                                                                                            <p class="submenu-dropdown-text">Nonprofit</p>              
+                                                                                        </a>
+                                                                                    </li>
+                                                                                    <li>
+
+
+                                                                                        <a href="https://partner.microsoft.com/en-nz/saas-solution-guide" aria-label="Cloud Applications">
+                                                                                            <p class="submenu-dropdown-text">Cloud Applications</p>              
+                                                                                        </a>
+                                                                                    </li>
+                                                                                    <li>
+
+
+                                                                                        <a href="https://partner.microsoft.com/en-nz/solutions/managed-services" aria-label="Managed Services">
+                                                                                            <p class="submenu-dropdown-text">Managed Services</p>              
+                                                                                        </a>
+                                                                                    </li>
+                                                                                    <li>
+
+
+                                                                                        <a href="https://partner.microsoft.com/en-nz/solutions/build-a-practice" aria-label="Build a Practice">
+                                                                                            <p class="submenu-dropdown-text">Build a Practice</p>              
+                                                                                        </a>
+                                                                                    </li>
+                                                                                    <li>
+
+
+                                                                                        <a href="https://partner.microsoft.com/en-nz/solutions/my-solutions" aria-label="Build a Solution">
+                                                                                            <p class="submenu-dropdown-text">Build a Solution</p>              
+                                                                                        </a>
+                                                                                    </li>
+                                                                                    <li>
+
+
+                                                                                        <a href="https://partner.microsoft.com/en-nz/solutions/the-commercial-marketplace" aria-label="Publish a Solution">
+                                                                                            <p class="submenu-dropdown-text">Publish a Solution</p>              
+                                                                                        </a>
+                                                                                    </li>
+                                                                        </ul>
+                                                                </li>
+                                                                <li class="uh-child-tertiary">
+
+
+                                                                    <a href="javascript:void(0);" class="dropdown-toggle icon-caret-rotate uh-navigation-dropdown-submenu-tertiary" data-toggle="dropdown" role="button" aria-label="Partner Marketing" aria-expanded="false">
+                                                                        <p class="submenu-dropdown-text">Partner Marketing</p>
+                                                                            <span class="icon icon-caret-down"></span>
+                                                                    </a>
+                                                                        <ul class="uh-dropdown-menu uh-child-submenu uh-tertiary-child-menu" style="min-height: 1px;">
+                                                                                    <li>
+
+
+                                                                                        <a href="https://partner.microsoft.com/en-nz/solutions/marketing-resource-hub" aria-label="Marketing Resources">
+                                                                                            <p class="submenu-dropdown-text">Marketing Resources</p>              
+                                                                                        </a>
+                                                                                    </li>
+                                                                                    <li>
+
+
+                                                                                        <a href="https://partner.microsoft.com/en-nz/solutions/reach-more-customers" aria-label="Find Customers">
+                                                                                            <p class="submenu-dropdown-text">Find Customers</p>              
+                                                                                        </a>
+                                                                                    </li>
+                                                                                    <li>
+
+
+                                                                                        <a href="https://partner.microsoft.com/en-nz/solutions/global-growth-center" aria-label="Market Expansion">
+                                                                                            <p class="submenu-dropdown-text">Market Expansion</p>              
+                                                                                        </a>
+                                                                                    </li>
+                                                                        </ul>
+                                                                </li>
+                                                    </ul>
+                                            </li>
+                                            <li data-nav-item="1003" class="uh-dropdown-submenu">
+                                                <a href="javascript:void(0);" class="dropdown-toggle icon-caret-rotate uh-navigation-dropdown-submenu" data-toggle="dropdown">
+                                                    <p class="submenu-dropdown-text"> Training</p>
+
+                                                        <span class="icon icon-caret-down"></span>
+                                                </a>
+                                                    <ul class="uh-dropdown-menu uh-child-submenu" style="min-height: 1px;">
+                                                                <li class="uh-child-tertiary">
+
+
+                                                                    <a href="javascript:void(0);" class="dropdown-toggle icon-caret-rotate uh-navigation-dropdown-submenu-tertiary" data-toggle="dropdown" role="button" aria-label="Learning Paths" aria-expanded="false">
+                                                                        <p class="submenu-dropdown-text">Learning Paths</p>
+                                                                            <span class="icon icon-caret-down"></span>
+                                                                    </a>
+                                                                        <ul class="uh-dropdown-menu uh-child-submenu uh-tertiary-child-menu" style="min-height: 1px;">
+                                                                                    <li>
+
+
+                                                                                        <a href="https://partner.microsoft.com/en-nz/training/training-center" aria-label="Overview">
+                                                                                            <p class="submenu-dropdown-text">Overview</p>              
+                                                                                        </a>
+                                                                                    </li>
+                                                                        </ul>
+                                                                </li>
+                                                                <li class="uh-child-tertiary">
+
+
+                                                                    <a href="javascript:void(0);" class="dropdown-toggle icon-caret-rotate uh-navigation-dropdown-submenu-tertiary" data-toggle="dropdown" role="button" aria-label="All Training" aria-expanded="false">
+                                                                        <p class="submenu-dropdown-text">All Training</p>
+                                                                            <span class="icon icon-caret-down"></span>
+                                                                    </a>
+                                                                        <ul class="uh-dropdown-menu uh-child-submenu uh-tertiary-child-menu" style="min-height: 1px;">
+                                                                                    <li>
+
+
+                                                                                        <a href="https://partner.microsoft.com/en-nz/training" aria-label="Training Options">
+                                                                                            <p class="submenu-dropdown-text">Training Options</p>              
+                                                                                        </a>
+                                                                                    </li>
+                                                                                    <li>
+
+
+                                                                                        <a href="https://partner.microsoft.com/en-nz/training/required-training" aria-label="Required Training">
+                                                                                            <p class="submenu-dropdown-text">Required Training</p>              
+                                                                                        </a>
+                                                                                    </li>
+                                                                                    <li>
+
+
+                                                                                        <a href="https://partner.microsoft.com/en-nz/training/training-manager" aria-label="Training Manager">
+                                                                                            <p class="submenu-dropdown-text">Training Manager</p>              
+                                                                                        </a>
+                                                                                    </li>
+                                                                                    <li>
+
+
+                                                                                        <a href="https://partner.microsoft.com/en-nz/training/assets" aria-label="Search All Training">
+                                                                                            <p class="submenu-dropdown-text">Search All Training</p>              
+                                                                                        </a>
+                                                                                    </li>
+                                                                                    <li>
+
+
+                                                                                        <a href="https://partner.microsoft.com/en-nz/training/virtual-training-series" aria-label="Virtual Trainings">
+                                                                                            <p class="submenu-dropdown-text">Virtual Trainings</p>              
+                                                                                        </a>
+                                                                                    </li>
+                                                                        </ul>
+                                                                </li>
+                                                                <li class="uh-child-tertiary">
+
+
+                                                                    <a href="javascript:void(0);" class="dropdown-toggle icon-caret-rotate uh-navigation-dropdown-submenu-tertiary" data-toggle="dropdown" role="button" aria-label="Growth Resources" aria-expanded="false">
+                                                                        <p class="submenu-dropdown-text">Growth Resources</p>
+                                                                            <span class="icon icon-caret-down"></span>
+                                                                    </a>
+                                                                        <ul class="uh-dropdown-menu uh-child-submenu uh-tertiary-child-menu" style="min-height: 1px;">
+                                                                                    <li>
+
+
+                                                                                        <a href="https://partner.microsoft.com/en-nz/training/enablement-overview" aria-label="Overview">
+                                                                                            <p class="submenu-dropdown-text">Overview</p>              
+                                                                                        </a>
+                                                                                    </li>
+                                                                                    <li>
+
+
+                                                                                        <a href="http://profitabilitybenchmark.microsoft.com/" aria-label="Assess Your Capability">
+                                                                                            <p class="submenu-dropdown-text">Assess Your Capability</p>              
+                                                                                        </a>
+                                                                                    </li>
+                                                                                    <li>
+
+
+                                                                                        <a href="https://partner.microsoft.com/en-nz/solutions/build-a-practice" aria-label="Build a More Profitable Business">
+                                                                                            <p class="submenu-dropdown-text">Build a More Profitable Business</p>              
+                                                                                        </a>
+                                                                                    </li>
+                                                                                    <li>
+
+
+                                                                                        <a href="https://partner.microsoft.com/en-nz/campaigns/cloud-practice-playbooks" aria-label="Cloud Practice Playbooks">
+                                                                                            <p class="submenu-dropdown-text">Cloud Practice Playbooks</p>              
+                                                                                        </a>
+                                                                                    </li>
+                                                                                    <li>
+
+
+                                                                                        <a href="https://partner.microsoft.com/en-nz/training/technical-presales-deployment-services" aria-label="Technical Presales and Deployment">
+                                                                                            <p class="submenu-dropdown-text">Technical Presales and Deployment</p>              
+                                                                                        </a>
+                                                                                    </li>
+                                                                                    <li>
+
+
+                                                                                        <a href="https://partner.microsoft.com/en-nz/resources" aria-label="Operations Readiness">
+                                                                                            <p class="submenu-dropdown-text">Operations Readiness</p>              
+                                                                                        </a>
+                                                                                    </li>
+                                                                        </ul>
+                                                                </li>
+                                                    </ul>
+                                            </li>
+                                            <li data-nav-item="1004" class="uh-dropdown-submenu">
+                                                <a href="javascript:void(0);" class="dropdown-toggle icon-caret-rotate uh-navigation-dropdown-submenu" data-toggle="dropdown">
+                                                    <p class="submenu-dropdown-text"> Connect</p>
+
+                                                        <span class="icon icon-caret-down"></span>
+                                                </a>
+                                                    <ul class="uh-dropdown-menu uh-child-submenu" style="min-height: 1px;">
+                                                                <li class="uh-child-tertiary">
+
+
+                                                                    <a href="javascript:void(0);" class="dropdown-toggle icon-caret-rotate uh-navigation-dropdown-submenu-tertiary" data-toggle="dropdown" role="button" aria-label="Partner Community" aria-expanded="false">
+                                                                        <p class="submenu-dropdown-text">Partner Community</p>
+                                                                            <span class="icon icon-caret-down"></span>
+                                                                    </a>
+                                                                        <ul class="uh-dropdown-menu uh-child-submenu uh-tertiary-child-menu" style="min-height: 1px;">
+                                                                                    <li>
+
+
+                                                                                        <a href="https://partner.microsoft.com/en-nz/connect/build-partnerships" aria-label="Build Partnerships">
+                                                                                            <p class="submenu-dropdown-text">Build Partnerships</p>              
+                                                                                        </a>
+                                                                                    </li>
+                                                                                    <li>
+
+
+                                                                                        <a href="https://partner.microsoft.com/en-nz/connect/follow-microsoft" aria-label="Follow Microsoft">
+                                                                                            <p class="submenu-dropdown-text">Follow Microsoft</p>              
+                                                                                        </a>
+                                                                                    </li>
+                                                                                    <li>
+
+
+                                                                                        <a href="https://blogs.partner.microsoft.com/en-nz/mpn" aria-label="Microsoft Partner Blog">
+                                                                                            <p class="submenu-dropdown-text">Microsoft Partner Blog</p>              
+                                                                                        </a>
+                                                                                    </li>
+                                                                                    <li>
+
+
+                                                                                        <a href="https://partner.microsoft.com/en-nz/connect/case-studies" aria-label="Case Studies">
+                                                                                            <p class="submenu-dropdown-text">Case Studies</p>              
+                                                                                        </a>
+                                                                                    </li>
+                                                                                    <li>
+
+
+                                                                                        <a href="https://www.microsoftpartnercommunity.com/" aria-label="Microsoft Partner Community">
+                                                                                            <p class="submenu-dropdown-text">Microsoft Partner Community</p>              
+                                                                                        </a>
+                                                                                    </li>
+                                                                                    <li>
+
+
+                                                                                        <a href="https://partner.microsoft.com/en-nz/connect/inclusion" aria-label="Inclusive Economy">
+                                                                                            <p class="submenu-dropdown-text">Inclusive Economy</p>              
+                                                                                        </a>
+                                                                                    </li>
+                                                                        </ul>
+                                                                </li>
+                                                                <li class="uh-child-tertiary">
+
+
+                                                                    <a href="javascript:void(0);" class="dropdown-toggle icon-caret-rotate uh-navigation-dropdown-submenu-tertiary" data-toggle="dropdown" role="button" aria-label="Events" aria-expanded="false">
+                                                                        <p class="submenu-dropdown-text">Events</p>
+                                                                            <span class="icon icon-caret-down"></span>
+                                                                    </a>
+                                                                        <ul class="uh-dropdown-menu uh-child-submenu uh-tertiary-child-menu" style="min-height: 1px;">
+                                                                                    <li>
+
+
+                                                                                        <a href="https://partner.microsoft.com/en-nz/event-search" aria-label="Find Partner Events">
+                                                                                            <p class="submenu-dropdown-text">Find Partner Events</p>              
+                                                                                        </a>
+                                                                                    </li>
+                                                                        </ul>
+                                                                </li>
+                                                    </ul>
+                                            </li>
+                                            <li data-nav-item="1005" class="uh-dropdown-submenu">
+                                                <a href="javascript:void(0);" class="dropdown-toggle icon-caret-rotate uh-navigation-dropdown-submenu" data-toggle="dropdown">
+                                                    <p class="submenu-dropdown-text"> Inspire</p>
+
+                                                        <span class="icon icon-caret-down"></span>
+                                                </a>
+                                                    <ul class="uh-dropdown-menu uh-child-submenu" style="min-height: 1px;">
+                                                                <li class="uh-child-tertiary">
+
+
+                                                                    <a href="javascript:void(0);" class="dropdown-toggle icon-caret-rotate uh-navigation-dropdown-submenu-tertiary" data-toggle="dropdown" role="button" aria-label="Microsoft Inspire" aria-expanded="false">
+                                                                        <p class="submenu-dropdown-text">Microsoft Inspire</p>
+                                                                            <span class="icon icon-caret-down"></span>
+                                                                    </a>
+                                                                        <ul class="uh-dropdown-menu uh-child-submenu uh-tertiary-child-menu" style="min-height: 1px;">
+                                                                                    <li>
+
+
+                                                                                        <a href="https://partner.microsoft.com/en-nz/inspire" aria-label="Overview">
+                                                                                            <p class="submenu-dropdown-text">Overview</p>              
+                                                                                        </a>
+                                                                                    </li>
+                                                                                    <li>
+
+
+                                                                                        <a href="https://partner.microsoft.com/en-nz/inspire/awards" aria-label="Awards">
+                                                                                            <p class="submenu-dropdown-text">Awards</p>              
+                                                                                        </a>
+                                                                                    </li>
+                                                                                    <li>
+
+
+                                                                                        <a href="https://partner.microsoft.com/en-nz/inspire/faq" aria-label="FAQ">
+                                                                                            <p class="submenu-dropdown-text">FAQ</p>              
+                                                                                        </a>
+                                                                                    </li>
+                                                                        </ul>
+                                                                </li>
+                                                                <li class="uh-child-tertiary">
+
+
+                                                                    <a href="javascript:void(0);" class="dropdown-toggle icon-caret-rotate uh-navigation-dropdown-submenu-tertiary" data-toggle="dropdown" role="button" aria-label="MyInspire" aria-expanded="false">
+                                                                        <p class="submenu-dropdown-text">MyInspire</p>
+                                                                            <span class="icon icon-caret-down"></span>
+                                                                    </a>
+                                                                        <ul class="uh-dropdown-menu uh-child-submenu uh-tertiary-child-menu" style="min-height: 1px;">
+                                                                                    <li>
+
+
+                                                                                        <a href="http://myinspire.microsoft.com/auth-redirect?dest=/home" aria-label="Attendee sign in">
+                                                                                            <p class="submenu-dropdown-text">Attendee sign in</p>              
+                                                                                        </a>
+                                                                                    </li>
+                                                                                    <li>
+
+
+                                                                                        <a href="https://myinspire.microsoft.com/sessions" aria-label="Session catalog">
+                                                                                            <p class="submenu-dropdown-text">Session catalog</p>              
+                                                                                        </a>
+                                                                                    </li>
+                                                                                    <li>
+
+
+                                                                                        <a href="https://myinspire.microsoft.com/speakers" aria-label="Speaker directory">
+                                                                                            <p class="submenu-dropdown-text">Speaker directory</p>              
+                                                                                        </a>
+                                                                                    </li>
+                                                                                    <li>
+
+
+                                                                                        <a href="https://myinspire.microsoft.com/sponsors" aria-label="Featured partners">
+                                                                                            <p class="submenu-dropdown-text">Featured partners</p>              
+                                                                                        </a>
+                                                                                    </li>
+                                                                        </ul>
+                                                                </li>
+                                                    </ul>
+                                            </li>
+                                            <li data-nav-item="1006" class="uh-dropdown-submenu">
+                                                <a href="https://partner.microsoft.com/en-nz/support" class=" uh-navigation-dropdown-submenu" data-toggle="">
+                                                    <p class="submenu-dropdown-text"> Support</p>
+
+                                                </a>
+                                            </li>
+                                </ul>
+
+                            </li>
+
+                                <li class="categories-nav-items light-nav-hidden nav-item-dashboard">
+                                    <a href="https://partner.microsoft.com/en-nz/dashboard" target="" class="dropdown-toggle base-menu-item uh-navigation-dropdown icon-caret-rotate" tabindex="8">
+                                        <p class="pull-left uh-p-bottom">
+                                            <span class="nw-nav-text">Partner Center</span>
+                                        </p>
+                                    </a>
+                                    <ul class="uh-dropdown-menu" style="min-height: 1px;"></ul>
+                                </li>
+
+                        </ul>
+                            <div class=" dashboard-container light-nav-hidden">
+                                <a href="https://partner.microsoft.com/en-nz/dashboard" target="" class="dashboard" role="button" tabindex="9">
+                                    <p class="nw-nav-text dashboard-text">Partner Center</p>
+                                </a>
+                            </div>
+                        <!-- /. nav bar -->
+                    </div>
+                </div>
+
+                <a href="javascript:void(0);" class="dropdown-toggle all-ms-hamburger icon-caret-rotate hide" aria-label="Header navigation menu" title="Header navigation menu" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" tabindex="1">
+                    <span class="icon icon-list"></span>
+                    <span class="icon icon-close"></span>
+                    <p class="all-ms-text">
+                        All Microsoft
+                        <span class="icon icon-caret-down"></span>
+                    </p>
+                </a>
+
+                <div class="dropdown-menu all-ms-dropdown-menu" style="width: 0px;">
+                    <ul class="product-names">
+                    </ul>
+                    <ul class="product-families">
+                    </ul>
+                </div>
+
+
+                <!-- end add in all ms -->
+
+            </div>
+        </div>
+        <div class="mobile-header light-nav-hidden current-site">
+                <a href="javascript:void(0);" class="dropdown-toggle icon-caret-rotate selected" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false" tabindex="7">
+                    <p class="uh-p-bottom">
+                        <span class="nw-nav-text">Partner Network</span>
+                        <span class="icon icon-caret-down"></span>
+                    </p>
+                </a>
+        </div>
+    </div>
+</div>
+            
+            <!--Emtpy Blade, no data source-->
+        </div>
+
+        <div role="main" id="main-content">
+            <!-- Network Profile Dialog Rendering -->
+
+            <!-- Content Placeholder -->
+            
+
+            
+
+            
+<!-- Social Blade Start -->
+    <div class="max-width social-blade light-nav-hidden" data-tracking-bladetype="SocialBlade" data-tracking-bladename="_SocialBladeConfig">
+        <div class="row bg-blue">
+            <div class="container-rf social-header visible-lg">
+                <div class="row">
+                        <div class="col-lg-4 socialblade-follow-us">
+                                    <span>Follow Us</span>
+                                        <a href="https://www.facebook.com/mspartner" class="fb" target="_blank" title="Follow us on Facebook" aria-label="Follow us on Facebook">
+                                                <span class="icon icon-soc-facebook icon-2x"></span>
+
+                                        </a>
+                                        <a href="https://twitter.com/mspartnernz" class="fb" target="_blank" title="Follow us on Twitter" aria-label="Follow us on Twitter">
+                                                <span class="icon icon-soc-twitter icon-2x"></span>
+
+                                        </a>
+                                        <a href="https://www.linkedin.com/company/3634496?trk=tyah&amp;trkInfo=clickedVertical%3Ashowcase%2CclickedEntityId%3A3634496%2Cidx%3A4-1-8%2CtarId%3A1473815168719%2Ctas%3Amicrosoft%20partner%20net" class="fb" target="_blank" title="Follow us on Linkedin" aria-label="Follow us on Linkedin">
+                                                <span class="icon icon-soc-linkedin icon-2x"></span>
+
+                                        </a>
+                                        <a href="https://www.youtube.com/channel/UCCF0RtgzOccPzIf7ZTgyhhQ" class="fb" target="_blank" title="Follow us on YouTube" aria-label="Follow us on YouTube">
+                                                <span class="icon icon-soc-youtube icon-2x"></span>
+
+                                        </a>
+                                        <a href="https://yammer.com/nzpartner#/home\" class="fb" target="_blank" title="Follow us on Yammer" aria-label="Follow us on Yammer">
+                                                <span class="icon icon-soc-yammer icon-2x"></span>
+
+                                        </a>
+
+                        </div>
+                                            <div class="col-lg-4 social-feedback  social-feedback-x ">
+                            <div class="table-center socialblade-feedback">
+                                <div id="socialfeedback">
+                                        <span>Was this page helpful?</span>
+
+                                        <a href="javascript:void(0);" role="button" aria-label="Was this page helpful?" title="Yes" class="social-btn btn-gutter yes-btn">Yes</a>
+                                                                            <a href="javascript:void(0);" role="button" aria-label="Was this page helpful?" title="No" class="social-btn no-btn">No</a>
+                                </div>
+
+
+                                <div class="feedback-block">
+                                    <input type="hidden" id="hdnAdditionalFeedback" value="Additional feedback">
+                                    <input type="hidden" id="hdnCharRemaining" value="characters remaining">
+                                        <span class="sb-content-desc">Additional feedback</span>
+                                    <textarea class="comments" title="Enter Additional feedback 1500 characters remaining"></textarea>
+                                        <span class="comments-message-box"><span class="spnCount">1500&nbsp;</span>characters remaining</span>
+                                    <div class="feedback-button-row clearfix">
+                                        <input name="" type="submit" class="social-btn submitBtn" value="Submit">
+                                        <input name="" type="button" class="social-btn gutter" value="Skip Feedback">
+                                    </div>
+                                </div>
+                                    <div class="thanks-message">Thank you for the feedback!</div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 socialblade-share visible-lrg ">
+                            <div class="pull-right">
+                                        <span>Share</span>
+                                            <a href="https://www.facebook.com/sharer/sharer.php?u=https://partner.microsoft.com/en-nz/void" class="fb" target="_blank" title="Share on Facebook" aria-label="Share on Facebook" data-mailto="False">
+                                                    <span class="icon icon-soc-facebook icon-2x"></span>
+                                            </a>
+                                            <a href="https://twitter.com/share?url=https://partner.microsoft.com/en-nz/void" class="fb" target="_blank" title="Share on Twitter" aria-label="Share on Twitter" data-mailto="False">
+                                                    <span class="icon icon-soc-twitter icon-2x"></span>
+                                            </a>
+                                            <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://partner.microsoft.com/en-nz/void" class="fb" target="_blank" title="Share on Linkedin" aria-label="Share on Linkedin" data-mailto="False">
+                                                    <span class="icon icon-soc-linkedin icon-2x"></span>
+                                            </a>
+                            </div>
+
+                        </div>
+
+
+
+                </div>
+            </div>
+        </div>
+
+        <div class="row bg-blue">
+            <div class="container-rf  social-blade-follow-all  social-header  visible-xs visible-sm visible-md">
+                <div class="row">
+
+                        <div class="col-md-6 col-sm-6 social-follow-us follow-border" id="social-follow">
+                                    <span>Follow Us</span>
+                                        <a href="https://www.facebook.com/mspartner" class="fb" target="_blank" title="Follow us on Facebook" aria-label="Follow us on Facebook">
+                                                <span class="icon icon-soc-facebook icon-2x"></span>
+
+                                        </a>
+                                        <a href="https://twitter.com/mspartnernz" class="fb" target="_blank" title="Follow us on Twitter" aria-label="Follow us on Twitter">
+                                                <span class="icon icon-soc-twitter icon-2x"></span>
+
+                                        </a>
+                                        <a href="https://www.linkedin.com/company/3634496?trk=tyah&amp;trkInfo=clickedVertical%3Ashowcase%2CclickedEntityId%3A3634496%2Cidx%3A4-1-8%2CtarId%3A1473815168719%2Ctas%3Amicrosoft%20partner%20net" class="fb" target="_blank" title="Follow us on Linkedin" aria-label="Follow us on Linkedin">
+                                                <span class="icon icon-soc-linkedin icon-2x"></span>
+
+                                        </a>
+                                        <a href="https://www.youtube.com/channel/UCCF0RtgzOccPzIf7ZTgyhhQ" class="fb" target="_blank" title="Follow us on YouTube" aria-label="Follow us on YouTube">
+                                                <span class="icon icon-soc-youtube icon-2x"></span>
+
+                                        </a>
+                                        <a href="https://yammer.com/nzpartner#/home\" class="fb" target="_blank" title="Follow us on Yammer" aria-label="Follow us on Yammer">
+                                                <span class="icon icon-soc-yammer icon-2x"></span>
+
+                                        </a>
+                        </div>
+
+                        <div class="col-md-6 col-sm-6 socialblade-share social-share" id="share">
+                                    <span>Share</span>
+                                        <a href="https://www.facebook.com/sharer/sharer.php?u=https://partner.microsoft.com/en-nz/void" class="fb" target="_blank" title="Share on Facebook" aria-label="Share on Facebook" data-mailto="False">
+                                                <span class="icon icon-soc-facebook icon-2x"></span>
+
+                                        </a>
+                                        <a href="https://twitter.com/share?url=https://partner.microsoft.com/en-nz/void" class="fb" target="_blank" title="Share on Twitter" aria-label="Share on Twitter" data-mailto="False">
+                                                <span class="icon icon-soc-twitter icon-2x"></span>
+
+                                        </a>
+                                        <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://partner.microsoft.com/en-nz/void" class="fb" target="_blank" title="Share on Linkedin" aria-label="Share on Linkedin" data-mailto="False">
+                                                <span class="icon icon-soc-linkedin icon-2x"></span>
+
+                                        </a>
+                        </div>
+
+                </div>
+                    <div class="col-md-4 col-sm-8 col-xs-12 social-feedback  socialblade-feedback" id="social-feedback">
+                        <div class="table-center">
+                            <div class="social-feedback-mobile">
+                                    <span>Was this page helpful?</span>
+                                                                    <a href="javascript:void(0);" role="button" aria-label="Was this page helpful?" title="Yes" class="social-btn btn-gutter yes-btn">Yes</a>
+                                                                    <a href="javascript:void(0);" role="button" aria-label="Was this page helpful?" title="No" class="social-btn no-btn">No</a>
+                            </div>
+                            <div class="feedback-block">
+                                    <span>Additional feedback</span>
+                                <textarea class="comments-mobile" title="Enter Additional feedback 1500 characters remaining"></textarea>
+                                    <span class="comments-message-box"><span class="spnCount">1500&nbsp;</span>characters remaining</span>
+                                <div class="feedback-button-row clearfix">
+                                    <input name="" type="submit" class="social-btn submitBtn" value="Submit">
+                                    <input name="" type="button" class="social-btn gutter" value="Skip Feedback">
+                                </div>
+                            </div>
+                        </div>
+                            <div class="thanks-message">Thank you for the feedback!</div>
+                    </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+        </div>
+        <div role="contentinfo">
+            <script>
+
+    function UpdateLocaleCookie() {
+        return "/api/sitecore/UniversalFooter/UpdateLocaleCookie";
+    }
+</script>
+<div>
+
+            <!-- Universal Footer Starts -->
+            <div class="universal-footer" data-tracking-bladename="UniversalFooter">
+                <div class="container-x threecol-grid-container">
+                    <div class="row light-nav-hidden">                       
+                        <div class="sixcol">
+                                                        <div class="col-lg-2 col-sm-4 col-xs-12 footer-three-col">
+                                <div class="list-unstyled colspace columnsm">
+                                                <div class="footer-section-header">
+                                                    Partner
+                                                </div>
+                        <div class="footer-text">
+<a title="Partner Center" href="https://partner.microsoft.com/en-nz/dashboard">Partner Center</a>                        </div>
+                        <div class="footer-text">
+<a title="Support" href="https://partner.microsoft.com/en-nz/support">Support</a>                        </div>
+                        <div class="footer-text">
+<a title="Programs" href="https://partner.microsoft.com/en-nz/dashboard/directory">Programs</a>                        </div>
+                        <div class="footer-text">
+<a rel="noopener noreferrer" title="Find a Partner" href="https://www.microsoft.com/en-nz/solution-providers/home" target="_blank">Find a Partner</a>                        </div>
+                        <div class="footer-text">
+<a title="Partner Network" href="https://partner.microsoft.com/en-nz/commercial">Partner Network</a>                        </div>
+                        <div class="footer-text">
+<a title="Incentives" href="https://partner.microsoft.com/en-nz/membership/partner-incentives">Incentives</a>                        </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-sm-4 col-xs-12 footer-three-col">
+                                <div class="list-unstyled colspace columnsm">
+                                                <div class="footer-section-header">
+                                                    Membership
+                                                </div>
+                        <div class="footer-text">
+<a title="Get Started Here" href="https://partner.microsoft.com/en-nz/membership">Get Started Here</a>                        </div>
+                        <div class="footer-text">
+<a title="Action Pack" href="https://partner.microsoft.com/en-nz/membership/action-pack">Action Pack</a>                        </div>
+                        <div class="footer-text">
+<a title="Competencies" href="https://partner.microsoft.com/en-nz/membership/competencies">Competencies</a>                        </div>
+                        <div class="footer-text">
+<a title="Renew" href="https://partner.microsoft.com/en-nz/membership/renew">Renew</a>                        </div>
+                        <div class="footer-text">
+<a title="Enroll" href="https://partner.microsoft.com/dashboard/account/v3/enrollment/introduction/partnership">Enroll</a>                        </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-sm-4 col-xs-12 footer-three-col">
+                                <div class="list-unstyled colspace columnsm">
+                                                <div class="footer-section-header">
+                                                    Solutions
+                                                </div>
+                        <div class="footer-text">
+<a title="Cloud Migration" href="https://partner.microsoft.com/en-nz/solutions/azure/server-migration">Cloud Migration</a>                        </div>
+                        <div class="footer-text">
+<a title="Artificial Intelligence" href="https://partner.microsoft.com/en-nz/solutions/azure/artificial-intelligence">Artificial Intelligence</a>                        </div>
+                        <div class="footer-text">
+<a title="Business Applications" href="https://partner.microsoft.com/en-nz/solutions/business-applications">Business Applications</a>                        </div>
+                        <div class="footer-text">
+<a title="Teamwork" href="https://partner.microsoft.com/en-nz/solutions/modern-workplace/teamwork">Teamwork</a>                        </div>
+                        <div class="footer-text">
+<a title="Cloud Applications" href="https://partner.microsoft.com/en-nz/saas-solution-guide">Cloud Applications</a>                        </div>
+                        <div class="footer-text">
+<a title="Internet of Things" href="https://partner.microsoft.com/en-nz/solutions/azure/internet-of-things">Internet of Things</a>                        </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-sm-4 col-xs-12 footer-three-col">
+                                <div class="list-unstyled colspace columnsm">
+                                                <div class="footer-section-header">
+                                                    Developer &amp; IT
+                                                </div>
+                        <div class="footer-text">
+<a rel="noopener noreferrer" title="Docs" href="https://docs.microsoft.com/" target="_blank">Docs</a>                        </div>
+                        <div class="footer-text">
+<a rel="noopener noreferrer" title="TechNet" href="https://technet.microsoft.com/" target="_blank">TechNet</a>                        </div>
+                        <div class="footer-text">
+<a rel="noopener noreferrer" title="Developer Network" href="https://msdn.microsoft.com/" target="_blank">Developer Network</a>                        </div>
+                        <div class="footer-text">
+<a rel="noopener noreferrer" title="Windows Dev Center" href="https://developer.microsoft.com/windows" target="_blank">Windows Dev Center</a>                        </div>
+                        <div class="footer-text">
+<a rel="noopener noreferrer" title="Windows IT Pro Center" href="https://www.microsoft.com/itpro/windows" target="_blank">Windows IT Pro Center</a>                        </div>
+                        <div class="footer-text">
+<a title="Licensing" href="https://partner.microsoft.com/en-nz/licensing">Licensing</a>                        </div>
+                        <div class="footer-text">
+<a rel="noopener noreferrer" title="AppSource" href="https://appsource.microsoft.com/" target="_blank">AppSource</a>                        </div>
+                        <div class="footer-text">
+<a rel="noopener noreferrer" title="Azure Marketplace" href="https://azuremarketplace.microsoft.com/marketplace/" target="_blank">Azure Marketplace</a>                        </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-sm-4 col-xs-12 footer-three-col">
+                                <div class="list-unstyled colspace columnsm">
+                                                <div class="footer-section-header">
+                                                    Resources
+                                                </div>
+                        <div class="footer-text">
+<a title="Connect With Partners" href="https://partner.microsoft.com/en-nz/connect/build-partnerships">Connect With Partners</a>                        </div>
+                        <div class="footer-text">
+<a title="Go To Market" href="https://partner.microsoft.com/en-nz/solutions/go-to-market">Go To Market</a>                        </div>
+                        <div class="footer-text">
+<a title="Events" href="https://partner.microsoft.com/en-nz/event-search">Events</a>                        </div>
+                        <div class="footer-text">
+<a title="Training" href="https://partner.microsoft.com/en-nz/training">Training</a>                        </div>
+                        <div class="footer-text">
+<a title="Build A Solution" href="https://partner.microsoft.com/en-nz/solutions/my-solutions">Build A Solution</a>                        </div>
+                        <div class="footer-text">
+<a title="Microsoft Partner Blog" href="http://blogs.partner.microsoft.com/mpn?ln={locale}">Microsoft Partner Blog</a>                        </div>
+                        <div class="footer-text">
+<a title="Sell With Microsoft" href="https://partner.microsoft.com/en-nz/membership/sell-with-microsoft">Sell With Microsoft</a>                        </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-sm-4 col-xs-12 footer-three-col">
+                                <div class="list-unstyled colspace columnsm">
+                                                <div class="footer-section-header">
+                                                    Support
+                                                </div>
+                        <div class="footer-text">
+<a title="Overview" href="https://partner.microsoft.com/en-nz/support">Overview</a>                        </div>
+                        <div class="footer-text">
+<a title="Compare Support Offers" href="https://partner.microsoft.com/en-nz/support/partnersupport">Compare Support Offers</a>                        </div>
+                        <div class="footer-text">
+<a title="Partner Center Help" href="https://docs.microsoft.com/partner-center/">Partner Center Help</a>                        </div>
+                        <div class="footer-text">
+<a title="Top Support Topics" href="https://partner.microsoft.com/en-nz/support">Top Support Topics</a>                        </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="clearfix"></div>                       
+                    </div>
+                    <div class="clearfix"></div>
+                    <!-- Footer Section - write logic here -->
+                    <div class="row">
+                        <div class="sixcol">
+                            <div class="footer-bottom footer-mini ">
+                                <div class="col-md-4 col-sm-6 col-xs-12 footer-mini-left ">
+                                        <a href="https://partner.microsoft.com/en-nz/localeselection">
+                                            New Zealand (English) <span class="footer-globe icon icon-globe"></span>
+                                        </a>
+                                </div>
+                                <div class="col-md-8 col-sm-6 col-xs-12 footer-mini-right">
+                                    <div>
+                                        <div class="text-right">
+                                            <div class="list-inline">
+                                                                <div>
+                    <a title="Contact us" href="http://go.microsoft.com/?linkid=2028351">Contact us</a>
+                </div>
+                <div>
+                    <a title="Privacy and cookies" href="http://go.microsoft.com/fwlink/?LinkId=521839">Privacy and cookies</a>
+                </div>
+                <div>
+                    <a class="manageCookies" title="Manage cookies" href="http:">Manage cookies</a>
+                </div>
+                <div>
+                    <a title="Terms of use" href="http://www.microsoft.com/en-us/legal/intellectualproperty/copyright/default.aspx">Terms of use</a>
+                </div>
+                <div>
+                    <a title="Trademarks" href="https://www.microsoft.com/trademarks">Trademarks</a>
+                </div>
+                <div>
+                    <a title="Partner Code of Conduct" href="https://www.microsoft.com/en-us/legal/compliance/anticorruption/reppolicy.aspx">Partner Code of Conduct</a>
+                </div>
+
+                                                <div>© 2021 Microsoft</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+        </div>
+        
+    </form>
+    
+    <script>
+        if (window.Hashtag) { Hashtag(); }
+    </script>
+
+    <script>
+        WcpConsent.init("en-NZ", "cookie-banner");
+    </script>
+
+
+<script src="./demandbase"></script>
+
+<div id="cboxOverlay" style="display: none;"></div><div id="colorbox" class="" role="dialog" tabindex="-1" style="display: none;"><div id="cboxWrapper"><div><div id="cboxTopLeft" style="float: left;"></div><div id="cboxTopCenter" style="float: left;"></div><div id="cboxTopRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxMiddleLeft" style="float: left;"></div><div id="cboxContent" style="float: left;"><div id="cboxTitle" style="float: left;"></div><div id="cboxCurrent" style="float: left;"></div><button type="button" id="cboxPrevious"></button><button type="button" id="cboxNext"></button><button id="cboxSlideshow"></button><div id="cboxLoadingOverlay" style="float: left;"></div><div id="cboxLoadingGraphic" style="float: left;"></div></div><div id="cboxMiddleRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxBottomLeft" style="float: left;"></div><div id="cboxBottomCenter" style="float: left;"></div><div id="cboxBottomRight" style="float: left;"></div></div></div><div style="position: absolute; width: 9999px; visibility: hidden; display: none;"></div></div><ul id="ui-id-1" tabindex="0" class="ui-menu ui-widget ui-widget-content ui-autocomplete ui-front" style="display: none;"></ul><div role="status" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><img style="display:none" alt="" aria-hidden="true" width="0" height="0" id="db_bw_pixel_ad" src="./demandbase(1)"><img style="display:none" alt="" aria-hidden="true" width="0" height="0" id="db_lr_pixel_ad" src="./464526.gif"></body></html>

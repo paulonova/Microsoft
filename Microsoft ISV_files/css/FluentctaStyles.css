@@ -1,0 +1,450 @@
+.cta-x {
+  max-width: 300px
+}
+
+.cta-x.cta-x:focus {
+  border: 1px dashed
+}
+
+.cta-x.cta-x-secondary .icon-trailing,
+.cta-x.cta-x-tertiary .icon-trailing {
+  padding-right: 15px;
+  transition: .13s, text-decoration 0s;
+  padding-left: 5px
+}
+
+.cta-x.cta-x-secondary .icon-leading,
+.cta-x.cta-x-tertiary .icon-leading {
+  padding-right: 5px
+}
+
+.cta-x.cta-x-secondary:hover .icon-trailing,
+.cta-x.cta-x-tertiary:hover .icon-trailing,
+.cta-x.cta-x-secondary:focus .icon-trailing,
+.cta-x.cta-x-tertiary:focus .icon-trailing {
+  transform: translateX(5px);
+  transition: .25s, text-decoration 0s
+}
+
+.cta-x.cta-x-primary {
+  border-radius: 2px;
+  border: 2px transparent solid;
+  padding: 10px 25px;
+  height: 50px
+}
+
+.cta-x.cta-x-primary .icon-trailing {
+  padding-left: 5px
+}
+
+.cta-x.cta-x-primary .icon-leading {
+  padding-right: 5px
+}
+
+.cta-x.cta-x-primary span {
+  display: inline-block;
+  transition: .13s, text-decoration 0s;
+  line-height: 1.5rem !important
+}
+
+.cta-x.cta-x-primary:hover,
+.cta-x.cta-x-primary:focus {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .2);
+  transition: .25s, text-decoration 0s
+}
+
+.cta-x.cta-x-primary:hover span:last-child:not(.fav-download-all),
+.cta-x.cta-x-primary:focus span:last-child:not(.fav-download-all) {
+  transform: translateX(5px);
+  transition: .25s, text-decoration 0s
+}
+
+.cta-x.cta-x-primary:hover .cta-text-span,
+.cta-x.cta-x-primary:focus .cta-text-span {
+  text-decoration: underline
+}
+
+.cta-x.cta-x-primary:hover span:first-child:not(.fav-download-all),
+.cta-x.cta-x-primary:focus span:first-child:not(.fav-download-all) {
+  transform: translateX(-5px);
+  transition: .25s, text-decoration 0s
+}
+
+.cta-x.cta-x-primary:active {
+  transform: scale(.98)
+}
+
+.cta-x.cta-x-primary .bg-corporate-blue,
+.cta-x.cta-x-primary a.bg-corporate-blue,
+.cta-x.cta-x-primary.bg-corporate-blue {
+  background-color: #0078d4;
+  color: #fff
+}
+
+.cta-x.cta-x-primary .bg-dark-purple,
+.cta-x.cta-x-primary a.bg-dark-purple,
+.cta-x.cta-x-primary.bg-dark-purple {
+  background-color: #32145a
+}
+
+.cta-x.cta-x-primary .bg-purple,
+.cta-x.cta-x-primary a.bg-purple,
+.cta-x.cta-x-primary.bg-purple {
+  background-color: #5c2d91
+}
+
+.cta-x.cta-x-primary .bg-dark-blue,
+.cta-x.cta-x-primary a.bg-dark-blue,
+.cta-x.cta-x-primary.bg-dark-blue {
+  background-color: #002050
+}
+
+.cta-x.cta-x-primary .bg-dark-teal,
+.cta-x.cta-x-primary a.bg-dark-teal,
+.cta-x.cta-x-primary.bg-dark-teal {
+  background-color: #004b50
+}
+
+.cta-x.cta-x-primary .bg-orange,
+.cta-x.cta-x-primary a.bg-orange,
+.cta-x.cta-x-primary.bg-orange {
+  background-color: #d83b01
+}
+
+.cta-x.cta-x-primary .bg-red,
+.cta-x.cta-x-primary a.bg-red,
+.cta-x.cta-x-primary.bg-red {
+  background-color: #e81123
+}
+
+.cta-x.cta-x-primary .bg-dark-red,
+.cta-x.cta-x-primary a.bg-dark-red,
+.cta-x.cta-x-primary.bg-dark-red {
+  background-color: #a80000
+}
+
+.cta-x.cta-x-primary .bg-magenta,
+.cta-x.cta-x-primary a.bg-magenta,
+.cta-x.cta-x-primary.bg-mid-magenta {
+  background-color: #b4009e
+}
+
+.cta-x.cta-x-primary .bg-dark-magenta,
+.cta-x.cta-x-primary a.bg-dark-magenta,
+.cta-x.cta-x-primary.bg-dark-magenta {
+  background-color: #5c005c
+}
+
+.cta-x.cta-x-primary .bg-teal,
+.cta-x.cta-x-primary a.bg-teal,
+.cta-x.cta-x-primary.bg-teal {
+  background-color: #008272
+}
+
+.cta-x.cta-x-primary .bg-green,
+.cta-x.cta-x-primary a.bg-green,
+.cta-x.cta-x-primary.bg-green {
+  background-color: #107c10
+}
+
+.cta-x.cta-x-primary .bg-dark-green,
+.cta-x.cta-x-primary a.bg-dark-green,
+.cta-x.cta-x-primary.bg-dark-green {
+  background-color: #004b1c
+}
+
+.cta-x.cta-x-primary .bg-mid-blue,
+.cta-x.cta-x-primary a.bg-mid-blue,
+.cta-x.cta-x-primary.bg-mid-blue {
+  background-color: #0018ff
+}
+
+.cta-x.cta-x-primary .bg-yellow,
+.cta-x.cta-x-primary a.bg-yellow,
+.cta-x.cta-x-primary.bg-yellow {
+  background-color: #ffb900
+}
+
+.cta-x.cta-x-primary .bg-light-yellow,
+.cta-x.cta-x-primary a.bg-light-yellow,
+.cta-x.cta-x-primary.bg-light-yellow {
+  background-color: #fff100
+}
+
+.cta-x.cta-x-primary .bg-light-orange,
+.cta-x.cta-x-primary a.bg-light-orange,
+.cta-x.cta-x-primary.bg-light-orange {
+  background-color: #ff8c00
+}
+
+.cta-x.cta-x-primary .bg-light-magenta,
+.cta-x.cta-x-primary a.bg-light-magenta,
+.cta-x.cta-x-primary.bg-light-magenta {
+  background-color: #e3008c
+}
+
+.cta-x.cta-x-primary .bg-light-purple,
+.cta-x.cta-x-primary a.bg-light-purple,
+.cta-x.cta-x-primary.bg-light-purple {
+  background-color: #b4a0ff
+}
+
+.cta-x.cta-x-primary .bg-light-teal,
+.cta-x.cta-x-primary a.bg-light-teal,
+.cta-x.cta-x-primary.bg-light-team {
+  background-color: #00b294
+}
+
+.cta-x.cta-x-primary .bg-light-blue,
+.cta-x.cta-x-primary a.bg-light-blue,
+.cta-x.cta-x-primary.bg-light-blue {
+  background-color: #00bcf2
+}
+
+.cta-x.cta-x-primary .bg-light-green,
+.cta-x.cta-x-primary a.bg-light-green,
+.cta-x.cta-x-primary.bg-light-green {
+  background-color: #bad80a
+}
+
+.cta-x.cta-x-primary .bg-light-gray,
+.cta-x.cta-x-primary a.bg-light-gray,
+.cta-x.cta-x-primary.bg-light-gray {
+  background-color: #d2d2d2
+}
+
+.cta-x.cta-x-primary .bg-mid-gray,
+.cta-x.cta-x-primary a.bg-mid-gray,
+.cta-x.cta-x-primary.bg-mid-gray {
+  background-color: #737373
+}
+
+.cta-x.cta-x-primary .bg-dark-gray,
+.cta-x.cta-x-primary a.bg-dark-gray,
+.cta-x.cta-x-primary.bg-dark-gray {
+  background-color: #505050
+}
+
+.cta-x.cta-x-primary .bg-black,
+.cta-x.cta-x-primary a.bg-black {
+  background-color: #000
+}
+
+.cta-x.cta-x-primary.bg-orange:hover,
+.cta-x.cta-x-primary.bg-orange.hovered,
+.cta-x.cta-x-primary.bg-red:hover,
+.cta-x.cta-x-primary.bg-red.hovered,
+.cta-x.cta-x-primary.bg-magenta:hover,
+.cta-x.cta-x-primary.bg-magenta.hovered,
+.cta-x.cta-x-primary.bg-purple:hover,
+.cta-x.cta-x-primary.bg-purple.hovered,
+.cta-x.cta-x-primary.bg-blue:hover,
+.cta-x.cta-x-primary.bg-blue.hovered,
+.cta-x.cta-x-primary.bg-teal:hover,
+.cta-x.cta-x-primary.bg-teal.hovered,
+.cta-x.cta-x-primary.bg-green:hover,
+.cta-x.cta-x-primary.bg-green.hovered,
+.cta-x.cta-x-primary.bg-dark-red:hover,
+.cta-x.cta-x-primary.bg-dark-red.hovered,
+.cta-x.cta-x-primary.bg-dark-magenta:hover,
+.cta-x.cta-x-primary.bg-dark-magenta.hovered,
+.cta-x.cta-x-primary.bg-dark-purple:hover,
+.cta-x.cta-x-primary.bg-dark-purple.hovered,
+.cta-x.cta-x-primary.bg-mid-blue:hover,
+.cta-x.cta-x-primary.bg-mid-blue.hovered,
+.cta-x.cta-x-primary.bg-dark-blue:hover,
+.cta-x.cta-x-primary.bg-dark-blue.hovered,
+.cta-x.cta-x-primary.bg-dark-teal:hover,
+.cta-x.cta-x-primary.bg-dark-teal.hovered,
+.cta-x.cta-x-primary.bg-dark-green:hover,
+.cta-x.cta-x-primary.bg-dark-green.hovered,
+.cta-x.cta-x-primary.bg-light-gray:hover,
+.cta-x.cta-x-primary.bg-mid-gray.hovered,
+.cta-x.cta-x-primary.bg-dark-gray:hover,
+.cta-x.cta-x-primary.bg-dark-gray.hovered,
+.cta-x.cta-x-primary.bg-black:hover,
+.cta-x.cta-x-primary.bg-black.hovered,
+.cta-x.cta-x-primary.bg-white:hover,
+.cta-x.cta-x-primary.bg-white.hovered,
+.cta-x.cta-x-primary.bg-yellow:hover,
+.cta-x.cta-x-primary.bg-yellow.hovered,
+.cta-x.cta-x-primary.bg-light-orange:hover,
+.cta-x.cta-x-primary.bg-light-orange.hovered,
+.cta-x.cta-x-primary.bg-light-magenta:hover,
+.cta-x.cta-x-primary.bg-light-magenta.hovered,
+.cta-x.cta-x-primary.bg-light-purple:hover,
+.cta-x.cta-x-primary.bg-light-purple.hovered,
+.cta-x.cta-x-primary.bg-light-blue:hover,
+.cta-x.cta-x-primary.bg-light-blue.hovered,
+.cta-x.cta-x-primary.bg-light-teal:hover,
+.cta-x.cta-x-primary.bg-light-teal.hovered,
+.cta-x.cta-x-primary.bg-light-green:hover,
+.cta-x.cta-x-primary.bg-light-green.hovered,
+.cta-x.cta-x-primary.bg-light-yellow:hover,
+.cta-x.cta-x-primary.bg-light-yellow.hovered,
+.cta-x.cta-x-primary.bg-mid-gray:hover,
+.cta-x.cta-x-primary.bg-light-gray:hover.hovered {
+  outline: none
+}
+
+.cta-x.cta-x-primary.bg-corporate-blue:hover {
+  background-color: #005ca1
+}
+
+.cta-x.cta-x-primary.bg-dark-purple:hover {
+  background-color: #1b0b30
+}
+
+.cta-x.cta-x-primary.bg-purple:hover {
+  background-color: #43216a
+}
+
+.cta-x.cta-x-primary.bg-dark-blue:hover {
+  background-color: #000c1d
+}
+
+.cta-x.cta-x-primary.bg-dark-teal:hover {
+  background-color: #001b1d
+}
+
+.cta-x.cta-x-primary.bg-yellow:hover {
+  background-color: #ffc733
+}
+
+.cta-x.cta-x-primary.bg-light-blue:hover {
+  background-color: #26cfff
+}
+
+.cta-x.cta-x-primary.bg-orange:hover {
+  background-color: #852e01
+}
+
+.cta-x.cta-x-primary.bg-red:hover {
+  background-color: #b80d1c
+}
+
+.cta-x.cta-x-primary.bg-dark-red:hover {
+  background-color: #750000
+}
+
+.cta-x.cta-x-primary.bg-magenta:hover {
+  background-color: #810072
+}
+
+.cta-x.cta-x-primary.bg-dark-magenta:hover {
+  background-color: #3a0029
+}
+
+.cta-x.cta-x-primary.bg-teal:hover {
+  background-color: #004f45
+}
+
+.cta-x.cta-x-primary.bg-green:hover {
+  background-color: #0a4e0a
+}
+
+.cta-x.cta-x-primary.bg-dark-green:hover {
+  background-color: #001808
+}
+
+.cta-x.cta-x-primary.bg-mid-blue:hover {
+  background-color: #00105c
+}
+
+.cta-x.cta-x-primary.bg-yellow:hover {
+  background-color: #ffc733
+}
+
+.cta-x.cta-x-primary.bg-light-yellow:hover {
+  background-color: #fff333
+}
+
+.cta-x.cta-x-primary.bg-light-orange:hover {
+  background-color: #ffa333
+}
+
+.cta-x.cta-x-primary.bg-light-magenta:hover {
+  background-color: #fe17a6
+}
+
+.cta-x.cta-x-primary.bg-light-purple:hover {
+  background-color: #dcd3ff
+}
+
+.cta-x.cta-x-primary.bg-light-teal:hover {
+  background-color: #00e4be
+}
+
+.cta-x.cta-x-primary.bg-light-gray:hover {
+  background-color: #ebebeb
+}
+
+.cta-x.cta-x-primary.bg-mid-gray:hover {
+  background-color: #595959
+}
+
+.cta-x.cta-x-primary.bg-dark-gray:hover {
+  background-color: #363636
+}
+
+.cta-x.cta-x-primary.bg-light-blue:hover .cta-text-span,
+.cta-x.cta-x-primary.bg-light-blue:focus .cta-text-span,
+.cta-x.cta-x-primary.bg-yellow:hover .cta-text-span,
+.cta-x.cta-x-primary.bg-yellow:focus .cta-text-span,
+.cta-x.cta-x-primary.bg-light-purple:hover .cta-text-span,
+.cta-x.cta-x-primary.bg-light-purple:focus .cta-text-span,
+.cta-x.cta-x-primary.bg-light-green:hover .cta-text-span,
+.cta-x.cta-x-primary.bg-light-green:focus .cta-text-span,
+.cta-x.cta-x-primary.bg-light-yellow:hover .cta-text-span,
+.cta-x.cta-x-primary.bg-light-yellow:focus .cta-text-span,
+.cta-x.cta-x-primary.bg-light-teal:hover .cta-text-span,
+.cta-x.cta-x-primary.bg-light-teal:focus .cta-text-span,
+.cta-x.cta-x-primary.bg-light-gray:hover .cta-text-span,
+.cta-x.cta-x-primary.bg-light-gray:focus .cta-text-span,
+.cta-x.cta-x-primary.bg-white:hover .cta-text-span,
+.cta-x.cta-x-primary.bg-white:focus .cta-text-span,
+.cta-x.cta-x-primary.bg-light-orange:hover .cta-text-span,
+.cta-x.cta-x-primary.bg-light-orange:focus .cta-text-span,
+.cta-x.cta-x-primary.bg-light-magenta:hover .cta-text-span,
+.cta-x.cta-x-primary.bg-light-magenta:focus .cta-text-span {
+  text-decoration: underline black
+}
+
+.cta-x.cta-x-primary.bg-corporate-blue:hover,
+.cta-x.cta-x-primary.bg-light-gray:hover,
+.cta-x.cta-x-primary.bg-light-blue:hover,
+.cta-x.cta-x-primary.bg-light-green:hover,
+.cta-x.cta-x-primary.bg-yellow:hover,
+.cta-x.cta-x-primary.bg-light-yellow:hover,
+.cta-x.cta-x-primary.bg-light-orange:hover,
+.cta-x.cta-x-primary.bg-light-purple:hover,
+.cta-x.cta-x-primary.bg-light-teal:hover {
+  border-color: #000
+}
+
+.cta-x.cta-x-primary.bg-dark-purple:hover,
+.cta-x.cta-x-primary.bg-purple:hover,
+.cta-x.cta-x-primary.bg-dark-blue:hover,
+.cta-x.cta-x-primary.bg-dark-teal:hover,
+.cta-x.cta-x-primary.bg-mid-gray:hover,
+.cta-x.cta-x-primary.bg-dark-gray:hover,
+.cta-x.cta-x-primary.bg-orange:hover,
+.cta-x.cta-x-primary.bg-red:hover,
+.cta-x.cta-x-primary.bg-dark-red:hover,
+.cta-x.cta-x-primary.bg-magenta:hover,
+.cta-x.cta-x-primary.bg-dark-magenta:hover,
+.cta-x.cta-x-primary.bg-teal:hover,
+.cta-x.cta-x-primary.bg-green:hover,
+.cta-x.cta-x-primary.bg-dark-green:hover,
+.cta-x.cta-x-primary.bg-mid-blue:hover {
+  border-color: #c8c8c8
+}
+
+.cta-x.cta-x-primary.bg-black:hover,
+.cta-x.cta-x-primary.bg-white:hover {
+  border-color: #767676
+}
+
+.cta-x.cta-x-primary.bg-light-green:hover {
+  background-color: #d6f520
+}

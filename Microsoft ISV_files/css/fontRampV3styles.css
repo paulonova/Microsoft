@@ -1,0 +1,226 @@
+.headline {
+  font-size: 2.667em;
+  font-weight: 600;
+  line-height: 1.25;
+  margin-bottom: .5em
+}
+
+.subhead1 {
+  font-size: 2em;
+  font-weight: 600;
+  line-height: 1.33;
+  margin-bottom: .5em
+}
+
+.subhead2 {
+  font-size: 1.5em;
+  font-weight: 600;
+  line-height: 1.5;
+  margin-bottom: .25em
+}
+
+.subhead3 {
+  font-size: 1.333em;
+  font-weight: 400;
+  line-height: 1.5;
+  margin-bottom: .25em
+}
+
+.subhead4 {
+  font-size: 1.167em;
+  font-weight: 400;
+  line-height: 1.429;
+  margin-bottom: .643em
+}
+
+.subhead5 {
+  font-size: 1.167em;
+  font-weight: 400;
+  line-height: 1.429;
+  margin-bottom: .643em
+}
+
+.subhead6 {
+  font-size: 1em;
+  font-weight: 400;
+  line-height: 1.5;
+  margin-bottom: .75em;
+  text-transform: uppercase
+}
+
+.feature-copy {
+  font-size: 1.167em;
+  font-weight: 400;
+  line-height: 1.429;
+  margin-bottom: .643em
+}
+
+.body-copy {
+  font-size: 1em;
+  font-weight: 400;
+  line-height: 1.75;
+  margin-bottom: .75em
+}
+
+.small-copy {
+  font-size: .833em;
+  font-weight: 400;
+  line-height: 1.8;
+  margin-bottom: .6em
+}
+
+@media(min-width:540px) {
+  .headline {
+    font-size: 3em;
+    line-height: 1.25;
+    margin-bottom: .5em
+  }
+
+  .subhead1 {
+    font-size: 2.167em;
+    line-height: 1.308;
+    margin-bottom: .538em
+  }
+
+  .subhead2 {
+    font-size: 1.667em;
+    line-height: 1.5;
+    margin-bottom: .25em
+  }
+
+  .subhead3 {
+    font-size: 1.5em;
+    line-height: 1.5;
+    margin-bottom: .278em
+  }
+
+  .feature-copy {
+    font-size: 1.333em;
+    line-height: 1.5;
+    margin-bottom: .688em
+  }
+}
+
+@media(min-width:680px) {
+  .headline {
+    font-size: 3em;
+    line-height: 1.262;
+    margin-bottom: .5em
+  }
+
+  .subhead1 {
+    font-size: 2.286em;
+    line-height: 1.313;
+    margin-bottom: .5em
+  }
+
+  .subhead2 {
+    font-size: 1.429em;
+    line-height: 1.5;
+    margin-bottom: .25em
+  }
+
+  .subhead3 {
+    font-size: 1.429em;
+    line-height: 1.5;
+    margin-bottom: .25em
+  }
+
+  .subhead4 {
+    font-size: 1.143em;
+    line-height: 1.5;
+    margin-bottom: .688em
+  }
+
+  .subhead5 {
+    font-size: 1.143em;
+    line-height: 1.5;
+    margin-bottom: .688em
+  }
+
+  .subhead6 {
+    font-size: 1em;
+    line-height: 1.5;
+    margin-bottom: .786em
+  }
+
+  .feature-copy {
+    font-size: 1.286em;
+    line-height: 1.5;
+    margin-bottom: .667em
+  }
+
+  .body-copy {
+    font-size: 1em;
+    line-height: 1.786;
+    margin-bottom: .786em
+  }
+
+  .small-copy {
+    font-size: .857em;
+    line-height: 1.75;
+    margin-bottom: .75em
+  }
+}
+
+@media(min-width:900px) {
+  .headline {
+    font-size: 3em;
+    line-height: 1.25;
+    margin-bottom: .5em
+  }
+
+  .subhead1 {
+    font-size: 2.25em;
+    line-height: 1.3333;
+    margin-bottom: .5em
+  }
+
+  .subhead2 {
+    font-size: 1.5em;
+    line-height: 1.5;
+    margin-bottom: .25em
+  }
+
+  .subhead3 {
+    font-size: 1.5em;
+    line-height: 1.5;
+    margin-bottom: .25em
+  }
+
+  .subhead4 {
+    font-size: 1.125em;
+    line-height: 1.5;
+    margin-bottom: .667em
+  }
+
+  .subhead5 {
+    font-size: 1em;
+    line-height: 1.5;
+    margin-bottom: .688em
+  }
+
+  .subhead6 {
+    font-size: 1em;
+    line-height: 1.5;
+    margin-bottom: .75em
+  }
+
+  .feature-copy {
+    font-size: 1.25em;
+    line-height: 1.5;
+    margin-bottom: .65em
+  }
+
+  .body-copy {
+    font-size: 1em;
+    line-height: 1.75;
+    margin-bottom: .75em
+  }
+
+  .small-copy {
+    font-size: .75em;
+    line-height: 1.75;
+    margin-bottom: .75em
+  }
+}

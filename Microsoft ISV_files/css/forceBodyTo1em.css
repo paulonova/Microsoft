@@ -1,0 +1,15 @@
+body {
+  font-size: 1em !important
+}
+
+@media(min-width:680px) and (max-width:899px) {
+  body {
+    font-size: 1em !important
+  }
+}
+
+@media Screen and (max-width:679px) {
+  body {
+    font-size: 1em !important
+  }
+}
